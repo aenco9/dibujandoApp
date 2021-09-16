@@ -37,6 +37,9 @@ class Principal : Fragment() {
         binding.btnInversionista.setOnClickListener {
             findNavController().navigate(R.id.action_principal_to_login)
         }
+        binding.btnOrganizacion.setOnClickListener {
+            findNavController().navigate(R.id.action_principal_to_login)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

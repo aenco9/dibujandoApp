@@ -8,45 +8,42 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import mx.itesm.dibujandoapp.R
-import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
-import mx.itesm.dibujandoapp.databinding.PrincipalFragmentBinding
-import mx.itesm.dibujandoapp.viewmodel.LoginVM
+import mx.itesm.dibujandoapp.databinding.RegistroExitosoFragment2Binding
 
-class login : Fragment() {
+import mx.itesm.dibujandoapp.viewmodel.RegistroExitosoVM
+
+class RegistroExitoso : Fragment() {
 
     companion object {
-        fun newInstance() = login()
+        fun newInstance() = RegistroExitoso()
     }
 
-    private lateinit var viewModel: LoginVM
+    private lateinit var viewModel: RegistroExitosoVM
 
-    private lateinit var binding: LoginFragmentBinding
+    private lateinit var binding: RegistroExitosoFragment2Binding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= LoginFragmentBinding.inflate(layoutInflater)
+        binding= RegistroExitosoFragment2Binding.inflate(layoutInflater)
         val vista= binding.root
         return vista
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-        binding.btnRegresar.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_principal)
+        binding.btnEntendido.setOnClickListener {
+            findNavController().navigate(R.id.action_registroExitoso_to_login)
         }
 
-        binding.btnRegistar.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_pantallaRegistro)
-        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginVM::class.java)
+        viewModel = ViewModelProvider(this).get(RegistroExitosoVM::class.java)
         // TODO: Use the ViewModel
     }
 
