@@ -22,5 +22,29 @@
         <action
             android:id="@+id/action_login_to_principal"
             app:destination="@id/principal" />
+        <action
+            android:id="@+id/action_login_to_pantallaRegistro"
+            app:destination="@id/pantallaRegistro" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaRegistro"
+        android:name="mx.itesm.dibujandoapp.view.PantallaRegistro"
+        android:label="pantalla_registro_fragment"
+        tools:layout="@layout/pantalla_registro_fragment" >
+        <action
+            android:id="@+id/action_pantallaRegistro_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_pantallaRegistro_to_registroExitoso"
+            app:destination="@id/registroExitoso" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroExitoso"
+        android:name="mx.itesm.dibujandoapp.view.RegistroExitoso"
+        android:label="registro_exitoso_fragment2"
+        tools:layout="@layout/registro_exitoso_fragment2" >
+        <action
+            android:id="@+id/action_registroExitoso_to_login"
+            app:destination="@id/login" />
     </fragment>
 </navigation>
