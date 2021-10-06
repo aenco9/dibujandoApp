@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
-import mx.itesm.dibujandoapp.databinding.PrincipalFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.LoginVM
 
 class login : Fragment() {

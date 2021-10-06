@@ -15,4 +15,13 @@
         <item name="android:fontFamily">@font/palatino</item>
         <item name="fontFamily">@font/palatino</item>
     </style>
+
+    <style name="Theme.DibujandoApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DibujandoApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DibujandoApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
