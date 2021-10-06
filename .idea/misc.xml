@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/fragment_causas_fragment.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/renglon_causa.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/activity_principal.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/app_bar_principal.xml" value="0.1852355072463768" />
@@ -18,7 +20,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
