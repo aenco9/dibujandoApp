@@ -34,9 +34,7 @@ class PantallaRegistro : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-        binding.btnRegresar2.setOnClickListener {
-            findNavController().navigate(R.id.action_pantallaRegistro_to_login)
-        }
+
 
         binding.btnRegistar2.setOnClickListener {
             findNavController().navigate(R.id.action_pantallaRegistro_to_registroExitoso)
