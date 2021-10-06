@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentCausasFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.CausasVM
-import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
 
 class CausasFrag : Fragment(), RenglonListener {
 
@@ -57,6 +54,6 @@ class CausasFrag : Fragment(), RenglonListener {
 
     override fun clickEnRenglon(posicion: Int) {
         val proyecto = adaptador.arrCausas[posicion]
-        println("Seleccion en proyecto ${proyecto}")
+        println("Seleccion en proyecto $proyecto")
     }
 }

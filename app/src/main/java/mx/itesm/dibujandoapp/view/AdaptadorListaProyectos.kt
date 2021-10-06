@@ -1,12 +1,10 @@
 package mx.itesm.dibujandoapp.view
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import mx.itesm.dibujandoapp.R
 
@@ -18,13 +16,13 @@ class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AdaptadorListaProyectos.ProyectoViewHolder {
+    ): ProyectoViewHolder {
         val vistaRenglon = LayoutInflater.from(parent.context).inflate(R.layout.renglon_causa, parent, false)
         return ProyectoViewHolder(vistaRenglon)
     }
 
     override fun onBindViewHolder(holder: ProyectoViewHolder, position: Int) {
-        holder.set(arrCausas[position], (listener as Fragment).requireContext())
+        holder.set(arrCausas[position])
         val vista = holder.itemView.findViewById<LinearLayout>(R.id.layoutRenglon)
         vista.setOnClickListener{
             println("Click en Proyecto ${arrCausas[position]}")
@@ -49,7 +47,7 @@ class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
         private val tvTitulo = vista.findViewById<TextView>(R.id.tvTitulo)
         private val tvDescripcion = vista.findViewById<TextView>(R.id.tvDescripcion)
 
-        fun set(proyecto: Proyecto, contexto: Context){
+        fun set(proyecto: Proyecto){
             tvTitulo.text = proyecto.Titulo
             tvDescripcion.text = proyecto.Descripcion
         }
