@@ -35,9 +35,6 @@ class login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-        binding.btnRegresar.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_principal)
-        }
 
         binding.btnRegistar.setOnClickListener {
             findNavController().navigate(R.id.action_login_to_pantallaRegistro)
