@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="rojo">#FFDA291C</color>
+    <color name="beige_web">#F2F0EC</color>
+    <color name="purple">#952A7E</color>
+    <color name="grey_content">#8C8C8C</color>
+    <color name="grey_main">#424242</color>
+    <color name="light_orange">#EDA038</color>
 </resources>
