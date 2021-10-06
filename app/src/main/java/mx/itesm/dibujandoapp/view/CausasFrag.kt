@@ -14,7 +14,7 @@ import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
 
 class CausasFrag : Fragment(), RenglonListener {
 
-    private lateinit var viewModel: CausasVM
+    private val viewModel: CausasVM by viewModels()
     private lateinit var binding: FragmentCausasFragmentBinding
     val adaptador = AdaptadorListaProyectos(arrayListOf())
 
