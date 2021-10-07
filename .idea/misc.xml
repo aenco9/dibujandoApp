@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/font/playfair_display.xml" value="0.1" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/font/playfair_display_bold.xml" value="0.1" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/font/poppins_medium.xml" value="0.1" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/activity_principal.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/activity_splash.xml" value="0.16203703703703703" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/content_principal.xml" value="0.10625" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/fragment_causas_fragment.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/informacion_fragment.xml" value="0.16203703703703703" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/renglon_causa.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/drawable/background_for_grey.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
