@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/login"
         android:name="mx.itesm.dibujandoapp.view.login"
-        android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        android:label="@string/perfil"
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_login_to_pantallaRegistro"
             app:destination="@id/pantallaRegistro" />
@@ -38,6 +38,11 @@
     <fragment
         android:id="@+id/causasFrag"
         android:name="mx.itesm.dibujandoapp.view.CausasFrag"
-        android:label="fragment_causas_fragment"
+        android:label="@string/causas"
         tools:layout="@layout/fragment_causas_fragment" />
+    <fragment
+        android:id="@+id/fragmentDonaciones"
+        android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
+        android:label="@string/donaciones"
+        tools:layout="@layout/fragment_donaciones" />
 </navigation>

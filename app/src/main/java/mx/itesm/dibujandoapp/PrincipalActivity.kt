@@ -2,7 +2,6 @@ package mx.itesm.dibujandoapp
 
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -33,7 +32,7 @@ class PrincipalActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.quienes_somos, R.id.donaciones, R.id.login, R.id.causasFrag
+                R.id.quienes_somos, R.id.fragmentDonaciones, R.id.login, R.id.causasFrag
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
