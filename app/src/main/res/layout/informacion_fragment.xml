@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Informacion">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E0ECD3"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/titulo"
+                android:layout_width="321dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textPersonName"
+                android:text="¿Quiénes Somos?"
+                android:textAlignment="center"
+                android:textSize="31sp" />
+
+            <ImageView
+                android:id="@+id/loguito"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:src="@drawable/logo" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/corazon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="96dp"
+                android:src="@drawable/corazon" />
+
+            <EditText
+                android:id="@+id/subtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="60"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textMultiLine|textPersonName"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="true"
+                android:text="¡Somos Fundación Dibujando un Mañana!"
+                android:textAlignment="center"
+                android:textSize="29sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Informacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Nos dedicamos a impulsar el desarrollo social de niños y adolescentes en situación del vulnerabilidad en México y América Central con un modelo de inversión social que entrelaza la voluntad de ayudar de diversos actores y la transforma en programas sociales basados en los derechos humanos que generan impactos positivos a largo plazo."
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/infantes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/infantes" />
+
+                <ImageView
+                    android:id="@+id/logotexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:scaleX=".7"
+                    android:scaleY=".7"
+                    android:src="@drawable/logotexto" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/corazon2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:background="#4A4A4A"
+                android:src="@drawable/corazon" />
+
+            <EditText
+                android:id="@+id/subtitulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="60"
+                android:background="#535050"
+                android:backgroundTint="#4A4A4A"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textMultiLine|textPersonName"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="true"
+                android:text="No hay barreras imposibles cuando existe la voluntad de ayudar y alguien que sabe hacerlo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="29sp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/corazon3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:background="#FFFFFF"
+                android:src="@drawable/corazon" />
+
+            <EditText
+                android:id="@+id/subtitulo3"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_weight="60"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textMultiLine|textPersonName"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="true"
+                android:text="Nuestra Historia"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="29sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/informacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="En octubre de 1997 nació Fundación Dibujando un Mañana, A.C. con el objetivo de invertir en instituciones que atienden a niños y adolescentes.\n\nHemos vivido muchos acontecimientos en 20 años, con siete presidentes, 40 miembros del Consejo Directivo, diferentes asesores en ocho Comités de trabajo y el Equipo Operativo. \n\nEstamos convencidos de que la ruta es generar alianzas para crear condiciones idóneas que favorezcan la vida digna de todas las personas en nuestro país y la región."
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/corazon4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:background="#FFFFFF"
+                android:src="@drawable/corazon" />
+
+            <EditText
+                android:id="@+id/subtitulo4"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_weight="60"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textMultiLine|textPersonName"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="true"
+                android:text="Nuestra Equipo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="29sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="403dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:rotationY="180"
+                    android:src="@drawable/derecha" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/foto" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/derecha" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@android:color/background_dark"
+                android:backgroundTint="#43E49E"
+                android:fontFamily="@font/playfair_display"
+                android:gravity="bottom"
+                android:text="Nombre y\ncargo"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:id="@+id/corazon5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:background="#FFFFFF"
+                android:src="@drawable/corazon" />
+
+            <EditText
+                android:id="@+id/subtitulo5"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:layout_weight="60"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/playfair_display"
+                android:inputType="textMultiLine|textPersonName"
+                android:nestedScrollingEnabled="false"
+                android:singleLine="false"
+                android:text="Nuestra plataforma estratégica"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="29sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName6"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="@color/rojo"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:text="Principios"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="@color/rojo"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:text="Propositos"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName8"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:background="@color/rojo"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:text="Virtudes"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
