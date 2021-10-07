@@ -7,67 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".Informacion">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#E0ECD3"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/titulo"
-                android:layout_width="321dp"
-                android:layout_height="match_parent"
-                android:layout_weight="60"
-                android:ems="10"
-                android:fontFamily="@font/playfair_display"
-                android:inputType="textPersonName"
-                android:text="¿Quiénes Somos?"
-                android:textAlignment="center"
-                android:textSize="31sp" />
-
-            <ImageView
-                android:id="@+id/loguito"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:src="@drawable/logo" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +28,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="96dp"
+                android:layout_marginTop="48dp"
                 android:src="@drawable/corazon" />
 
             <EditText
@@ -87,13 +36,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="60"
+                android:clickable="false"
+                android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
                 android:text="¡Somos Fundación Dibujando un Mañana!"
                 android:textAlignment="center"
+                android:textColor="#000000"
                 android:textSize="29sp"
                 android:textStyle="bold" />
 
@@ -145,7 +98,9 @@
                 android:layout_weight="60"
                 android:background="#535050"
                 android:backgroundTint="#4A4A4A"
+                android:clickable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
@@ -172,7 +127,9 @@
                 android:layout_weight="60"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:clickable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
@@ -208,7 +165,9 @@
                 android:layout_weight="60"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:clickable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
@@ -259,6 +218,8 @@
                 android:layout_marginTop="32dp"
                 android:background="@android:color/background_dark"
                 android:backgroundTint="#43E49E"
+                android:clickable="false"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:gravity="bottom"
                 android:text="Nombre y\ncargo"
@@ -281,7 +242,9 @@
                 android:layout_weight="60"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:clickable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:fontFamily="@font/playfair_display"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
@@ -299,6 +262,7 @@
                 android:layout_height="40sp"
                 android:background="@color/rojo"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Principios"
@@ -311,6 +275,7 @@
                 android:layout_height="40sp"
                 android:background="@color/rojo"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Propositos"
@@ -323,6 +288,7 @@
                 android:layout_height="40sp"
                 android:background="@color/rojo"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Virtudes"
