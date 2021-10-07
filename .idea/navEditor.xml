@@ -75,6 +75,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="infoPagoFrag">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="305" />
+                            <option name="y" value="661" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="informacion_fragment">
                     <value>
                       <LayoutPositions>

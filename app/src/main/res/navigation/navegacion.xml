@@ -39,7 +39,11 @@
         android:id="@+id/causasFrag"
         android:name="mx.itesm.dibujandoapp.view.CausasFrag"
         android:label="@string/causas"
-        tools:layout="@layout/fragment_causas_fragment" />
+        tools:layout="@layout/fragment_causas_fragment" >
+        <action
+            android:id="@+id/action_causasFrag_to_infoPagoFrag"
+            app:destination="@id/infoPagoFrag" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentDonaciones"
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
@@ -59,4 +63,11 @@
         android:name="mx.itesm.dibujandoapp.view.datosDonaciones"
         android:label="fragment_datos_donaciones"
         tools:layout="@layout/fragment_datos_donaciones" />
+    <fragment
+        android:id="@+id/infoPagoFrag"
+        android:name="mx.itesm.dibujandoapp.InfoPagoFrag"
+        android:label="info_pago_fragment"
+        tools:layout="@layout/info_pago_fragment" >
+        <argument android:name="CausaSeleccionada" />
+    </fragment>
 </navigation>

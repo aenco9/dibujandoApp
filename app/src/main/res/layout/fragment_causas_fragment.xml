@@ -22,15 +22,18 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/corazon7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/corazon" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/playfair_display_bold"
                 android:text="Nuestras causas"
                 android:textAlignment="center"
                 android:textSize="33sp"
@@ -40,6 +43,9 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/playfair_display"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 android:text="Ayuda ahora"
                 android:textAlignment="center"
                 android:textSize="18sp" />
