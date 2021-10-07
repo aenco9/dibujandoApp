@@ -47,6 +47,15 @@
     <string name="account_donations5">N° de Cuenta: 0450074497</string>
     <string name="clabe_donations5">CLABE: 012180004500744974</string>
     <string name="end_donations5">Para más información o dudas sobre tus donativos Llama al Tel. (55) 2122-5286  Ext. 3320 o escríbenos a entreamigos@dibujando.org.mx</string>
+    <!-- Strings para pantalla de datos de donacion -->
+    <string name="hint_nombre">Nombre Completo</string>
+    <string name="hint_genero">Género</string>
+    <string name="hint_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="hint_municipio">Municipio</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_correo">Correo electrónico</string>
+    <string name="hint_deducible">¡¡¡¡¡¡Desea deducible?</string>
+    <string name="boton_donar_datos">Donar</string>
 
 
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navegacion"
-    app:startDestination="@id/informacion2">
+    app:startDestination="@id/informacion_fragment">
 
     <fragment
         android:id="@+id/login"
@@ -44,10 +44,19 @@
         android:id="@+id/fragmentDonaciones"
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
         android:label="@string/donaciones"
-        tools:layout="@layout/fragment_donaciones" />
+        tools:layout="@layout/fragment_donaciones" >
+        <action
+            android:id="@+id/action_fragmentDonaciones_to_datosDonaciones"
+            app:destination="@id/datosDonaciones" />
+    </fragment>
     <fragment
-        android:id="@+id/informacion2"
+        android:id="@+id/informacion_fragment"
         android:name="mx.itesm.dibujandoapp.Informacion"
         android:label="@string/quienes_somos"
         tools:layout="@layout/informacion_fragment" />
+    <fragment
+        android:id="@+id/datosDonaciones"
+        android:name="mx.itesm.dibujandoapp.view.datosDonaciones"
+        android:label="fragment_datos_donaciones"
+        tools:layout="@layout/fragment_datos_donaciones" />
 </navigation>
