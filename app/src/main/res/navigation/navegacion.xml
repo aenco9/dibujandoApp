@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navegacion"
-    app:startDestination="@id/login">
+    app:startDestination="@id/informacion2">
 
     <fragment
         android:id="@+id/login"
@@ -45,4 +45,9 @@
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
         android:label="@string/donaciones"
         tools:layout="@layout/fragment_donaciones" />
+    <fragment
+        android:id="@+id/informacion2"
+        android:name="mx.itesm.dibujandoapp.Informacion"
+        android:label="@string/quienes_somos"
+        tools:layout="@layout/informacion_fragment" />
 </navigation>
