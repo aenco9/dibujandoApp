@@ -41,7 +41,7 @@ class FragmentDonaciones : Fragment() {
     }
 
     private fun respondToTaps() {
-        TODO("oh boi")
+
         /*
         val myAction = FragmentDonacionesDirections.actionScrollingFragmentToDatosDonaciones()
         binding.campaignImageViewBtn1.setOnClickListener {
