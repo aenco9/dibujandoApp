@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/quienes_somos" />
         <item
-            android:id="@+id/donaciones"
+            android:id="@+id/fragmentDonaciones"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/donaciones" />
         <item
