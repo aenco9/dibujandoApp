@@ -8,100 +8,89 @@
     android:background="@color/white"
     tools:context=".view.PantallaRegistro">
 
-    <Button
-        android:id="@+id/btnRegistar2"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="369dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="560dp"
-        android:layout_marginEnd="10pt"
-        android:backgroundTint="#FF9800"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/palatino"
-        android:text="Crear nueva cuenta"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="10pt"
-        android:ems="10"
-        android:fontFamily="@font/palatino"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="10pt"
-        android:ems="10"
-        android:fontFamily="@font/palatino"
-        android:hint="Nombre de usuario"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="238dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/logotransparente" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="167dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/logotransparente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10pt"
+                android:ems="10"
+                android:fontFamily="@font/palatino"
+                android:hint="Nombre de usuario"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="23dp"
-        android:ems="10"
-        android:hint="Fecha de nacimiento (DD/MM/AAAA)"
-        android:inputType="date"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10pt"
+                android:ems="10"
+                android:fontFamily="@font/palatino"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="23dp"
-        android:ems="10"
-        android:hint="Correo"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="23dp"
+                android:ems="10"
+                android:hint="Fecha de nacimiento (DD/MM/AAAA)"
+                android:inputType="date"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="23dp"
+                android:ems="10"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnRegistar2"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="20pt"
+                android:layout_marginEnd="10pt"
+                android:backgroundTint="#FF9800"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/palatino"
+                android:text="Crear nueva cuenta"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
