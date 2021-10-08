@@ -25,7 +25,7 @@
                 android:src="@drawable/logotransparente" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/generoEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10pt"
@@ -53,7 +53,7 @@
                 android:textColor="#000000" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/fechaEditTextDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"
@@ -65,7 +65,7 @@
                 android:textAlignment="center" />
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/correoEditTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"

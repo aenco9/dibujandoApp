@@ -40,8 +40,8 @@
     <string name="button_donations4">Donar</string>
     <string name="subtitle_donations5">Depósito en efectivo y transferencia</string>
     <string name="content_donations5">CONTENT_TRANSFER</string>
-    <string name="substract_paypal">-200.00</string>
-    <string name="add_paypal">+200.00</string>
+    <string name="substract_paypal">-150.00</string>
+    <string name="add_paypal">+150.00</string>
     <string name="name_donations5">Nombre: Fundación Dibujando un Mañana, A.C.</string>
     <string name="bank_donations5">Banco: BBVA</string>
     <string name="account_donations5">N° de Cuenta: 0450074497</string>
@@ -54,8 +54,8 @@
     <string name="hint_municipio">Municipio</string>
     <string name="hint_telefono">Teléfono</string>
     <string name="hint_correo">Correo electrónico</string>
-    <string name="hint_deducible">¡¡¡¡¡¡Desea deducible?</string>
+    <string name="hint_deducible">Desea deducible?</string>
     <string name="boton_donar_datos">Donar</string>
-
-
+    <string name="smart_default_pay_pal">$150.00 MXN</string>
+    <string name="label_datos_donacion">Datos de donación</string>
 </resources>
