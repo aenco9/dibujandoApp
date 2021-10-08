@@ -172,7 +172,7 @@
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
-                android:text="Nuestra Equipo"
+                android:text="Nuestro Equipo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="29sp"
