@@ -7,6 +7,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mx.itesm.dibujandoapp.R
+import java.sql.DriverManager.println
+import java.util.*
 
 class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
     RecyclerView.Adapter<AdaptadorListaProyectos.ProyectoViewHolder>()

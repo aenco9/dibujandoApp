@@ -51,6 +51,20 @@
                             <option name="y" value="661" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_causasFrag_to_datosDonaciones">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_causasFrag_to_infoPagoFrag">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -92,8 +106,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="305" />
-                            <option name="y" value="661" />
+                            <option name="x" value="409" />
+                            <option name="y" value="586" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -104,8 +118,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="270" />
+                            <option name="y" value="-19" />
                           </Point>
                         </option>
                       </LayoutPositions>
