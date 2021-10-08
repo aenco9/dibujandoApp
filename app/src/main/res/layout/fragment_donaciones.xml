@@ -194,7 +194,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/contentFinal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -223,7 +223,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/contentFinal" />
 
         <TextView
             android:id="@+id/textView11"
@@ -326,13 +326,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
+            android:id="@+id/montoPaypalEditTextDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="128dp"
             android:ems="10"
+            android:hint="@string/smart_default_pay_pal"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -347,7 +348,7 @@
             android:backgroundTint="@color/grey_content"
             android:fontFamily="@font/questrial"
             android:text="@string/substract_paypal"
-            app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/montoPaypalEditTextDecimal"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <Button
@@ -359,7 +360,7 @@
             android:backgroundTint="@color/grey_content"
             android:fontFamily="@font/questrial"
             android:text="@string/add_paypal"
-            app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal"
+            app:layout_constraintStart_toEndOf="@+id/montoPaypalEditTextDecimal"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <Button
@@ -374,7 +375,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+            app:layout_constraintTop_toBottomOf="@+id/montoPaypalEditTextDecimal" />
 
         <Button
             android:id="@+id/payPalDonateMonthlyBtn"
@@ -402,10 +403,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal3" />
+            app:layout_constraintTop_toBottomOf="@+id/montoCreditCardEditTextDecimal" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal3"
+            android:id="@+id/montoCreditCardEditTextDecimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

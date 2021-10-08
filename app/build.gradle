@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    // Para la generación de Directions y el uso de args con las actions.
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {

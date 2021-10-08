@@ -37,13 +37,12 @@ class FragmentDonaciones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.contentFinal.visibility = View.GONE
         respondToTaps()
     }
 
     private fun respondToTaps() {
-
-        /*
-        val myAction = FragmentDonacionesDirections.actionScrollingFragmentToDatosDonaciones()
+        val myAction = FragmentDonacionesDirections.actionFragmentDonacionesToDatosDonaciones()
         binding.campaignImageViewBtn1.setOnClickListener {
             findNavController().navigate(myAction)
         }
@@ -72,7 +71,5 @@ class FragmentDonaciones : Fragment() {
         binding.payPalSubstractBtn.setOnClickListener {
             binding.montoPaypalEditTextDecimal.setText("LESS")
         }
-
-         */
     }
 }

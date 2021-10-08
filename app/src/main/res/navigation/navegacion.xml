@@ -39,11 +39,7 @@
         android:id="@+id/causasFrag"
         android:name="mx.itesm.dibujandoapp.view.CausasFrag"
         android:label="@string/causas"
-        tools:layout="@layout/fragment_causas_fragment" >
-        <action
-            android:id="@+id/action_causasFrag_to_infoPagoFrag"
-            app:destination="@id/infoPagoFrag" />
-    </fragment>
+        tools:layout="@layout/fragment_causas_fragment" />
     <fragment
         android:id="@+id/fragmentDonaciones"
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
@@ -61,13 +57,15 @@
     <fragment
         android:id="@+id/datosDonaciones"
         android:name="mx.itesm.dibujandoapp.view.datosDonaciones"
-        android:label="fragment_datos_donaciones"
-        tools:layout="@layout/fragment_datos_donaciones" />
-    <fragment
-        android:id="@+id/infoPagoFrag"
-        android:name="mx.itesm.dibujandoapp.InfoPagoFrag"
-        android:label="info_pago_fragment"
-        tools:layout="@layout/info_pago_fragment" >
-        <argument android:name="CausaSeleccionada" />
+        android:label="@string/label_datos_donacion"
+        tools:layout="@layout/fragment_datos_donaciones">
+        <action
+            android:id="@+id/action_datosDonaciones_to_blankFragment"
+            app:destination="@id/blankFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="mx.itesm.dibujandoapp.donaciones.BlankFragment"
+        android:label="PayPal"
+        tools:layout="@layout/fragment_blank" />
 </navigation>

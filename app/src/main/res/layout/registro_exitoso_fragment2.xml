@@ -8,50 +8,41 @@
     android:background="@color/white"
     tools:context=".view.RegistroExitoso">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Te has registrado!"
-        android:textColor="@color/rojo"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ahora puedes iniciar sesión"
-        android:textColor="@color/rojo"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Te has registrado!"
+            android:textColor="@color/rojo"
+            android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btnEntendido"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="363dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="10pt"
-        android:backgroundTint="@color/rojo"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/palatino"
-        android:text="Entendido"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ahora puedes iniciar sesión"
+            android:textColor="@color/rojo"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnEntendido"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginStart="10pt"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10pt"
+            android:backgroundTint="@color/rojo"
+            android:backgroundTintMode="add"
+            android:fontFamily="@font/palatino"
+            android:text="Entendido"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

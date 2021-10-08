@@ -8,88 +8,80 @@
     android:background="@color/white"
     tools:context=".view.login">
 
-    <Button
-        android:id="@+id/btnRegistrar2"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="369dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="424dp"
-        android:layout_marginEnd="10pt"
-        android:backgroundTint="@color/rojo"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/palatino"
-        android:text="Iniciar sesion"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnRegistar"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="369dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="10pt"
-        android:layout_marginTop="524dp"
-        android:layout_marginEnd="10pt"
-        android:backgroundTint="#FF9800"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/palatino"
-        android:text="Crear nueva cuenta"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10pt"
-        android:layout_marginEnd="10pt"
-        android:layout_marginBottom="72dp"
-        android:ems="10"
-        android:fontFamily="@font/palatino"
-        android:hint="Nombre de usuario"
-        android:inputType="textPersonName"
-        android:singleLine="false"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.058" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="238dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/logotransparente" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10pt"
-        android:layout_marginEnd="10pt"
-        android:ems="10"
-        android:fontFamily="@font/palatino"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.094" />
+            <EditText
+                android:id="@+id/nombreEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10pt"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:fontFamily="@font/palatino"
+                android:hint="Nombre de usuario"
+                android:inputType="textPersonName"
+                android:singleLine="false"
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="167dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/logotransparente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginEnd="10pt"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:fontFamily="@font/palatino"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnRegistrar2"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginEnd="10pt"
+                android:backgroundTint="@color/rojo"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/palatino"
+                android:text="Iniciar sesion"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnRegistar"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10pt"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10pt"
+                android:backgroundTint="#FF9800"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/palatino"
+                android:text="Crear nueva cuenta"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
