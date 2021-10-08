@@ -17,7 +17,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/light_orange"
             app:popupTheme="@style/Theme.DibujandoApp.PopupOverlay"
-            app:titleTextColor="@color/grey_main" />
+            app:titleTextColor="@color/beige_web" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

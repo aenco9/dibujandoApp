@@ -39,7 +39,11 @@
         android:id="@+id/causasFrag"
         android:name="mx.itesm.dibujandoapp.view.CausasFrag"
         android:label="@string/causas"
-        tools:layout="@layout/fragment_causas_fragment" />
+        tools:layout="@layout/fragment_causas_fragment" >
+        <action
+            android:id="@+id/action_causasFrag_to_datosDonaciones"
+            app:destination="@id/datosDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentDonaciones"
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"

@@ -6,16 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/informacion_fragment"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/quienes_somos" />
+        <!--android:icon="@drawable/ic_menu_camera" -->
         <item
             android:id="@+id/fragmentDonaciones"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="@string/donaciones" />
+            <!-- android:icon="@drawable/ic_menu_gallery" -->
         <item
             android:id="@+id/login"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/perfil" />
+            <!-- android:icon="@drawable/ic_menu_slideshow" -->
         <item
             android:id="@+id/causasFrag"
             android:title="@string/causas" />
