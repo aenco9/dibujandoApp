@@ -30,18 +30,6 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="blankFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="989" />
-                            <option name="y" value="740" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="causasFrag">
                     <value>
                       <LayoutPositions>
@@ -50,6 +38,15 @@
                             <option name="x" value="10" />
                             <option name="y" value="661" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_causasFrag_to_datosDonaciones">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -62,6 +59,15 @@
                             <option name="x" value="572" />
                             <option name="y" value="809" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_datosDonaciones_to_paypalDonation">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -142,6 +148,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="paypalDonation">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="853" />
+                            <option name="y" value="842" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

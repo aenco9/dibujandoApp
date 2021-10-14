@@ -128,24 +128,6 @@
             app:layout_constraintTop_toBottomOf="@+id/campaignImageViewBtn2" />
 
         <TextView
-            android:id="@+id/textView13"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/playfair_display_bold"
-            android:text="@string/subtitle_donations4"
-            android:textAlignment="center"
-            android:textColor="@color/grey_main"
-            android:textSize="39sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/payPalDonateMonthlyBtn" />
-
-        <TextView
             android:id="@+id/textView16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -161,7 +143,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/creditCardDonateBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/payPalDonateMonthlyBtn" />
 
         <TextView
             android:id="@+id/textView8"
@@ -177,21 +159,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/content_donations4"
-            android:textColor="@color/grey_content"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/contentFinal"
@@ -306,61 +273,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/background_for_grey"
-            android:fontFamily="@font/questrial"
-            android:gravity="center_vertical"
-            android:text="@string/subsubtitle_donations4"
-            android:textAlignment="center"
-            android:textColor="@color/grey_content"
-            android:textSize="39sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
         <EditText
             android:id="@+id/montoPaypalEditTextDecimal"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="128dp"
             android:ems="10"
-            android:hint="@string/smart_default_pay_pal"
+            android:hint="@string/hint_pay_pal_amount"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <Button
-            android:id="@+id/payPalSubstractBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:backgroundTint="@color/grey_content"
-            android:fontFamily="@font/questrial"
-            android:text="@string/substract_paypal"
-            app:layout_constraintEnd_toStartOf="@+id/montoPaypalEditTextDecimal"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <Button
-            android:id="@+id/payPalAddBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/grey_content"
-            android:fontFamily="@font/questrial"
-            android:text="@string/add_paypal"
-            app:layout_constraintStart_toEndOf="@+id/montoPaypalEditTextDecimal"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <Button
@@ -390,31 +312,6 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/payPalDonateOnceBtn" />
-
-        <Button
-            android:id="@+id/creditCardDonateBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/light_orange"
-            android:fontFamily="@font/questrial"
-            android:text="@string/button_donations4"
-            android:textSize="39sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/montoCreditCardEditTextDecimal" />
-
-        <EditText
-            android:id="@+id/montoCreditCardEditTextDecimal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

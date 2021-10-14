@@ -57,19 +57,5 @@ class FragmentDonaciones : Fragment() {
             findNavController().navigate(myAction)
 
         }
-        binding.creditCardDonateBtn.setOnClickListener {
-            if (binding.montoCreditCardEditTextDecimal.text.isEmpty()) {
-                Toast.makeText(getActivity(), "Por favor introduzca un monto",
-                    Toast.LENGTH_LONG).show();
-            } else {
-                findNavController().navigate(myAction)
-            }
-        }
-        binding.payPalAddBtn.setOnClickListener {
-            binding.montoPaypalEditTextDecimal.setText("MORE")
-        }
-        binding.payPalSubstractBtn.setOnClickListener {
-            binding.montoPaypalEditTextDecimal.setText("LESS")
-        }
     }
 }

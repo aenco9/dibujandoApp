@@ -15,7 +15,7 @@ import mx.itesm.dibujandoapp.databinding.FragmentDatosDonacionesBinding
  * Autor:
  * Luis Ignacio Ferro Salinas
  * Última modificación:
- * 7 de octubre de 2021
+ * 14 de octubre de 2021
  *
  * */
 
@@ -43,7 +43,7 @@ class datosDonaciones : Fragment() {
                 Toast.makeText(getActivity(), "Por favor llene todos los campos",
                     Toast.LENGTH_LONG).show();
             } else {
-                val myAction = datosDonacionesDirections.actionDatosDonacionesToBlankFragment()
+                val myAction = datosDonacionesDirections.actionDatosDonacionesToPaypalDonation()
                 findNavController().navigate(myAction)
             }
         }

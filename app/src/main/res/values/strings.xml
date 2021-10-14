@@ -56,6 +56,6 @@
     <string name="hint_correo">Correo electrónico</string>
     <string name="hint_deducible">Desea deducible?</string>
     <string name="boton_donar_datos">Donar</string>
-    <string name="smart_default_pay_pal">$150.00 MXN</string>
+    <string name="hint_pay_pal_amount">Monto ($MXN)</string>
     <string name="label_datos_donacion">Datos de donación</string>
 </resources>
