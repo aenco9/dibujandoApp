@@ -23,11 +23,12 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.11458333333333333" />
         <entry key="app/src/main/res/layout/app_bar_principal.xml" value="0.1852355072463768" />
         <entry key="app/src/main/res/layout/content_principal.xml" value="0.17527173913043478" />
-        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.28329875560491236" />
         <entry key="app/src/main/res/layout/fragment_causas_fragment.xml" value="0.17527173913043478" />
         <entry key="app/src/main/res/layout/fragment_datos_donaciones.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.25297619047619047" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17527173913043478" />
+        <entry key="app/src/main/res/layout/fragment_paypal_donation.xml" value="0.26222826086956524" />
         <entry key="app/src/main/res/layout/informacion_fragment.xml" value="0.375" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.17527173913043478" />
         <entry key="app/src/main/res/layout/nav_header_principal.xml" value="0.4833506907192158" />
