@@ -23,7 +23,7 @@ class CausasFrag : Fragment(), RenglonListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCausasFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -59,7 +59,9 @@ class CausasFrag : Fragment(), RenglonListener {
     override fun clickEnRenglon(posicion: Int) {
         val proyecto = adaptador.arrCausas[posicion]
         println("Seleccion en proyecto ${proyecto}")
-        //val accion = CausasFragDirections.actionCausasFragToDatosDonaciones()
-        //findNavController().navigate(accion)
+        val titulo = proyecto.Titulo
+        val descripcion = proyecto.Descripcion
+        val accion = CausasFragDirections.actionCausasFragToDatosCausa2(titulo, descripcion)
+        findNavController().navigate(accion)
     }
 }

@@ -34,7 +34,7 @@ class DatosDonaciones : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDatosDonacionesBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -45,7 +45,7 @@ class DatosDonaciones : Fragment() {
         subscribeToGenderChange()
         subscribeToEmailChange()
         subscribeToDateChange()
-        TODO("revisar la fecha, el numero de telefono y ya")
+        //TODO("revisar la fecha, el numero de telefono y ya")
     }
 
     private fun subscribeToDateChange() {
@@ -56,7 +56,7 @@ class DatosDonaciones : Fragment() {
                 if (!viewModel.acceptableDate(binding.fechaEditTextDate.text.toString())) {
                     binding.fechaEditTextDate.setText("")
                     Toast.makeText(getActivity(), "Por favor escriba una fecha valida",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }    }
@@ -69,7 +69,7 @@ class DatosDonaciones : Fragment() {
                 if (!viewModel.acceptableEmail(binding.correoEditTextEmail.text.toString())) {
                     binding.correoEditTextEmail.setText("")
                     Toast.makeText(getActivity(), "Por favor escriba un correo valido con @",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -80,11 +80,11 @@ class DatosDonaciones : Fragment() {
             if (hasFocus) {
                 // User is modifying the gender.
             } else {
-                if (!viewModel.acceptableGender(binding.correoEditTextEmail.text.toString())) {
+                if (!viewModel.acceptableGender(binding.generoEditText.text.toString())) {
                     binding.generoEditText.setText("")
                     Toast.makeText(getActivity(), "Por favor escriba M para masculino" +
                             " o F para femenino",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -101,7 +101,7 @@ class DatosDonaciones : Fragment() {
                 binding.municipioEditText.text.isEmpty()) {
                 Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
                         "correcta.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_LONG).show()
             } else {
                 val myAction = DatosDonacionesDirections
                     .actionDatosDonacionesToPaypalDonation(args.monto)
@@ -114,7 +114,7 @@ class DatosDonaciones : Fragment() {
             if (binding.deducibleSwitch.isChecked()) {
                 Toast.makeText(getActivity(), "Por favor remita sus datos fiscales al " +
                         "correo entreamigos@dibujando.org.mx adjuntando el comprobante.",
-                    Toast.LENGTH_SHORT).show();
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }
