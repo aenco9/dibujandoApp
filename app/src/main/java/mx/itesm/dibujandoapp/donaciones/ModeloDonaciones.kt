@@ -17,4 +17,7 @@ class ModeloDonaciones {
     public fun acceptableEmail(email: String): Boolean {
         return "@" in email && "." in email
     }
+    public fun acceptableDate(date: String): Boolean {
+        return true
+    }
 }

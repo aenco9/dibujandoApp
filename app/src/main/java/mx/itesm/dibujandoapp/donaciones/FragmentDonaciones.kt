@@ -50,7 +50,6 @@ class FragmentDonaciones : Fragment() {
             findNavController().navigate(myAction)
         }*/
         binding.payPalDonateOnceBtn.setOnClickListener {
-            //TODO("REVISAR SI EL MONTO ES MENOR A 9999999.99")
             if (binding.montoPaypalEditTextDecimal.text.isEmpty()) {
                 Toast.makeText(getActivity(), "Por favor llene el campo " +
                         "del Monto antes de continuar.",

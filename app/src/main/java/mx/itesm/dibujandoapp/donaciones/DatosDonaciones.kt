@@ -44,8 +44,22 @@ class DatosDonaciones : Fragment() {
         respondToTaps()
         subscribeToGenderChange()
         subscribeToEmailChange()
+        subscribeToDateChange()
         TODO("revisar la fecha, el numero de telefono y ya")
     }
+
+    private fun subscribeToDateChange() {
+        binding.fechaEditTextDate.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                // User is modifying the date.
+            } else {
+                if (!viewModel.acceptableDate(binding.fechaEditTextDate.text.toString())) {
+                    binding.fechaEditTextDate.setText("")
+                    Toast.makeText(getActivity(), "Por favor escriba una fecha valida",
+                        Toast.LENGTH_SHORT).show();
+                }
+            }
+        }    }
 
     private fun subscribeToEmailChange() {
         binding.correoEditTextEmail.setOnFocusChangeListener { _, hasFocus ->
@@ -66,7 +80,7 @@ class DatosDonaciones : Fragment() {
             if (hasFocus) {
                 // User is modifying the gender.
             } else {
-                if (!viewModel.acceptableEmail(binding.correoEditTextEmail.text.toString())) {
+                if (!viewModel.acceptableGender(binding.correoEditTextEmail.text.toString())) {
                     binding.generoEditText.setText("")
                     Toast.makeText(getActivity(), "Por favor escriba M para masculino" +
                             " o F para femenino",
