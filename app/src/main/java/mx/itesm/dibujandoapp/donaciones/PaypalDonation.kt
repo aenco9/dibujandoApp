@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.paypal.checkout.approve.OnApprove
 import com.paypal.checkout.cancel.OnCancel
 import com.paypal.checkout.createorder.CreateOrder
@@ -18,6 +19,7 @@ import com.paypal.checkout.order.AppContext
 import com.paypal.checkout.order.Order
 import com.paypal.checkout.order.PurchaseUnit
 import com.paypal.checkout.paymentbutton.PayPalButton
+import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentDonacionesBinding
 import mx.itesm.dibujandoapp.databinding.FragmentPaypalDonationBinding
 
@@ -31,7 +33,7 @@ import mx.itesm.dibujandoapp.databinding.FragmentPaypalDonationBinding
 class PaypalDonation: Fragment() {
     // This is the reference to the view.
     private lateinit var binding: FragmentPaypalDonationBinding
-
+    private val args: PaypalDonationArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +53,7 @@ class PaypalDonation: Fragment() {
                         PurchaseUnit(
                             amount = Amount(
                                 currencyCode = CurrencyCode.USD,
-                                value = "0.1"
+                                value = String.format("%.1f", args.monto) // Pasando el monto a paypal.
                             )
                         )
                     )
@@ -79,7 +81,10 @@ class PaypalDonation: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showAmount()
     }
 
-
+    private fun showAmount() {
+        binding.showAmountTextView.text = "Usted va a donar: $ ${args.monto} MXN"
+    }
 }

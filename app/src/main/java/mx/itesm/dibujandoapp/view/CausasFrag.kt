@@ -59,7 +59,7 @@ class CausasFrag : Fragment(), RenglonListener {
     override fun clickEnRenglon(posicion: Int) {
         val proyecto = adaptador.arrCausas[posicion]
         println("Seleccion en proyecto ${proyecto}")
-        val accion = CausasFragDirections.actionCausasFragToDatosDonaciones()
-        findNavController().navigate(accion)
+        //val accion = CausasFragDirections.actionCausasFragToDatosDonaciones()
+        //findNavController().navigate(accion)
     }
 }

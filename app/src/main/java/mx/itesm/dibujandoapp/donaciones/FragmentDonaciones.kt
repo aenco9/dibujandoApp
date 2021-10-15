@@ -15,7 +15,7 @@ import mx.itesm.dibujandoapp.databinding.FragmentDonacionesBinding
  * Autor:
  * Luis Ignacio Ferro Salinas
  * Última modificación:
- * 7 de octubre de 2021
+ * 14 de octubre de 2021
  *
  * */
 
@@ -42,20 +42,34 @@ class FragmentDonaciones : Fragment() {
     }
 
     private fun respondToTaps() {
-        val myAction = FragmentDonacionesDirections.actionFragmentDonacionesToDatosDonaciones()
-        binding.campaignImageViewBtn1.setOnClickListener {
+
+        /*binding.campaignImageViewBtn1.setOnClickListener {
             findNavController().navigate(myAction)
         }
         binding.campaignImageViewBtn2.setOnClickListener {
             findNavController().navigate(myAction)
-        }
+        }*/
         binding.payPalDonateOnceBtn.setOnClickListener {
-            findNavController().navigate(myAction)
-
-        }
-        binding.payPalDonateMonthlyBtn.setOnClickListener {
-            findNavController().navigate(myAction)
-
+            //TODO("REVISAR SI EL MONTO ES MENOR A 9999999.99")
+            if (binding.montoPaypalEditTextDecimal.text.isEmpty()) {
+                Toast.makeText(getActivity(), "Por favor llene el campo " +
+                        "del Monto antes de continuar.",
+                    Toast.LENGTH_LONG).show();
+            } else if (binding.montoPaypalEditTextDecimal.text.toString().toFloat() >= 9999999.99) {
+                binding.montoPaypalEditTextDecimal.setText("")
+                Toast.makeText(
+                    getActivity(), "Por favor introduzca un monto" +
+                            " menor a 9999999.99",
+                    Toast.LENGTH_LONG
+                ).show();
+            } else {
+                val actionWithAmount = FragmentDonacionesDirections
+                    .actionFragmentDonacionesToDatosDonaciones(binding.montoPaypalEditTextDecimal
+                        .text
+                        .toString()
+                        .toFloat())
+                findNavController().navigate(actionWithAmount)
+            }
         }
     }
 }
