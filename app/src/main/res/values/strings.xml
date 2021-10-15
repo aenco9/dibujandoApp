@@ -31,7 +31,7 @@
     <string name="subtitle_donations2">Campañas especiales</string>
     <string name="subtititle_donations3">Donativo por PayPal</string>
     <string name="content_donations3">Asocia tus tarjetas de crédito a PayPal, y ¡ya estás listo para donar!</string>
-    <string name="button_donations31">Donar una vez</string>
+    <string name="button_donations31">Donar</string>
     <string name="button_donations32">Donar cada mes</string>
     <string name="subtitle_donations4">Cargo a tarjeta bancaria</string>
     <string name="content_donations4">Haz tu donativo/pago único de forma segura utilizando tu tarjeta de crédito o débito.</string>
@@ -49,8 +49,8 @@
     <string name="end_donations5">Para más información o dudas sobre tus donativos Llama al Tel. (55) 2122-5286  Ext. 3320 o escríbenos a entreamigos@dibujando.org.mx</string>
     <!-- Strings para pantalla de datos de donacion -->
     <string name="hint_nombre">Nombre Completo</string>
-    <string name="hint_genero">Género</string>
-    <string name="hint_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="hint_genero">Género (M/F)</string>
+    <string name="hint_fecha_nacimiento">Fecha de nacimiento (dd/mm/aaaa)</string>
     <string name="hint_municipio">Municipio</string>
     <string name="hint_telefono">Teléfono</string>
     <string name="hint_correo">Correo electrónico</string>
@@ -58,4 +58,6 @@
     <string name="boton_donar_datos">Donar</string>
     <string name="hint_pay_pal_amount">Monto ($MXN)</string>
     <string name="label_datos_donacion">Datos de donación</string>
+    <!-- Strings de recurso de layout de donacion de paypal -->
+    <string name="label_paypal_donation">Donación con PayPal</string>
 </resources>

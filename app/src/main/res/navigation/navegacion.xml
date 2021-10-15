@@ -39,11 +39,7 @@
         android:id="@+id/causasFrag"
         android:name="mx.itesm.dibujandoapp.view.CausasFrag"
         android:label="@string/causas"
-        tools:layout="@layout/fragment_causas_fragment" >
-        <action
-            android:id="@+id/action_causasFrag_to_datosDonaciones2"
-            app:destination="@id/datosDonaciones" />
-    </fragment>
+        tools:layout="@layout/fragment_causas_fragment" />
     <fragment
         android:id="@+id/fragmentDonaciones"
         android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
@@ -60,15 +56,22 @@
         tools:layout="@layout/informacion_fragment" />
     <fragment
         android:id="@+id/datosDonaciones"
-        android:name="mx.itesm.dibujandoapp.view.datosDonaciones"
+        android:name="mx.itesm.dibujandoapp.donaciones.DatosDonaciones"
         android:label="@string/label_datos_donacion"
         tools:layout="@layout/fragment_datos_donaciones">
         <action
             android:id="@+id/action_datosDonaciones_to_paypalDonation"
             app:destination="@id/paypalDonation" />
+        <argument
+            android:name="monto"
+            app:argType="float" />
     </fragment>
     <fragment
         android:id="@+id/paypalDonation"
         android:name="mx.itesm.dibujandoapp.donaciones.PaypalDonation"
-        android:label="PaypalDonation" />
+        android:label="@string/label_paypal_donation">
+        <argument
+            android:name="monto"
+            app:argType="float" />
+    </fragment>
 </navigation>

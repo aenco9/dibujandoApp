@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentCausasFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.CausasVM
+import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
 
 class CausasFrag : Fragment(), RenglonListener {
 
@@ -56,8 +58,8 @@ class CausasFrag : Fragment(), RenglonListener {
 
     override fun clickEnRenglon(posicion: Int) {
         val proyecto = adaptador.arrCausas[posicion]
-        println("Seleccion en proyecto $proyecto")
-        val accion = CausasFragDirections.actionCausasFragToDatosDonaciones2()
-        findNavController().navigate(accion)
+        println("Seleccion en proyecto ${proyecto}")
+        //val accion = CausasFragDirections.actionCausasFragToDatosDonaciones()
+        //findNavController().navigate(accion)
     }
 }
