@@ -20,4 +20,8 @@ class DatosDonacionesVM: ViewModel() {
     public fun acceptableEmail(email: String): Boolean {
         return modeloDonaciones.acceptableEmail(email)
     }
+
+    public fun acceptableDate(date: String): Boolean {
+        return modeloDonaciones.acceptableDate(date)//poner funcion en modelo
+    }
 }
