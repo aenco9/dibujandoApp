@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "215552121711",
+    "project_id": "rt-dibujandoapp",
+    "storage_bucket": "rt-dibujandoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215552121711:android:0548cc540cca4ee72e669a",
+        "android_client_info": {
+          "package_name": "mx.itesm.dibujandoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215552121711-dgij0q8rk6bommamqp31hm4ms4surpje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9RMHbr5b0zuzw-iND6oRj714--JheM9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215552121711-dgij0q8rk6bommamqp31hm4ms4surpje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.paypal.checkout:android-sdk:0.5.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/af27f7cb5f45491a8d40f6c9b20f80a8/transformed/jetified-android-sdk-0.5.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/66f817ae4d09a2c6f675ac739df8ca3d/transformed/jetified-android-sdk-0.5.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/af27f7cb5f45491a8d40f6c9b20f80a8/transformed/jetified-android-sdk-0.5.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/af27f7cb5f45491a8d40f6c9b20f80a8/transformed/jetified-android-sdk-0.5.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/af27f7cb5f45491a8d40f6c9b20f80a8/transformed/jetified-android-sdk-0.5.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66f817ae4d09a2c6f675ac739df8ca3d/transformed/jetified-android-sdk-0.5.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66f817ae4d09a2c6f675ac739df8ca3d/transformed/jetified-android-sdk-0.5.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/66f817ae4d09a2c6f675ac739df8ca3d/transformed/jetified-android-sdk-0.5.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
