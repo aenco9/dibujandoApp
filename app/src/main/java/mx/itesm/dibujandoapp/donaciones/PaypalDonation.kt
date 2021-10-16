@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.paypal.checkout.approve.OnApprove
 import com.paypal.checkout.cancel.OnCancel
@@ -47,12 +48,15 @@ class PaypalDonation: Fragment() {
                 val order = Order(
                     intent = OrderIntent.CAPTURE,
                     appContext = AppContext(
+                        brandName = "Fundación Dibujando un Meñana",
+                        locale = "es-MX",
+                        landingPage = "NO_PREFERENCE",
                         userAction = UserAction.PAY_NOW
                     ),
                     purchaseUnitList = listOf(
                         PurchaseUnit(
                             amount = Amount(
-                                currencyCode = CurrencyCode.USD,
+                                currencyCode = CurrencyCode.MXN,
                                 value = String.format("%.1f", args.monto) // Pasando el monto a paypal.
                             )
                         )
@@ -63,8 +67,12 @@ class PaypalDonation: Fragment() {
             },
             onApprove = OnApprove { approval ->
                 approval.orderActions.capture { captureOrderResult ->
-                    Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
-                    println("CaptureOrderResult: $captureOrderResult")
+                    val actionToConfirm = PaypalDonationDirections
+                        .actionPaypalDonationToPayPalConfirmation()
+                    findNavController().navigate(actionToConfirm)
+                    //Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
+                    //println("CaptureOrderResult: $captureOrderResult")
+
                 }
             },
             onCancel = OnCancel {
@@ -85,6 +93,6 @@ class PaypalDonation: Fragment() {
     }
 
     private fun showAmount() {
-        binding.showAmountTextView.text = "Usted va a donar: $ ${args.monto} MXN"
+        binding.showAmountTextView.text = "Usted va a donar: $ ${args.monto} MXN a ${args.titulo}"
     }
 }

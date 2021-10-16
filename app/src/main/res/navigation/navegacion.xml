@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/pantallaRegistro"
         android:name="mx.itesm.dibujandoapp.view.PantallaRegistro"
-        android:label="pantalla_registro_fragment"
-        tools:layout="@layout/pantalla_registro_fragment" >
+        android:label="Registro"
+        tools:layout="@layout/pantalla_registro_fragment">
         <action
             android:id="@+id/action_pantallaRegistro_to_login"
             app:destination="@id/login" />
@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_fragmentDonaciones_to_datosDonaciones"
             app:destination="@id/datosDonaciones" />
+        <action
+            android:id="@+id/action_fragmentDonaciones_to_datos_causa"
+            app:destination="@id/datos_causa" />
     </fragment>
     <fragment
         android:id="@+id/informacion_fragment"
@@ -72,7 +75,7 @@
         <argument
             android:name="titulo"
             app:argType="string"
-            android:defaultValue="Fundacion Dibujando un Mañana" />
+            android:defaultValue="Fundación Dibujando un Mañana" />
     </fragment>
     <fragment
         android:id="@+id/paypalDonation"
@@ -81,21 +84,32 @@
         <argument
             android:name="monto"
             app:argType="float" />
+        <argument
+            android:name="titulo"
+            app:argType="string"
+            android:defaultValue="Fundación Dibujando un Mañana" />
+        <action
+            android:id="@+id/action_paypalDonation_to_payPalConfirmation"
+            app:destination="@id/payPalConfirmation" />
     </fragment>
     <fragment
         android:id="@+id/datos_causa"
         android:name="mx.itesm.dibujandoapp.datos_causa"
-        android:label="datos_causa_fragment"
-        tools:layout="@layout/datos_causa_fragment" >
-        <argument
-            android:name="titulo"
-            app:argType="string"
-            android:defaultValue="Fundacion Dibujando un Mañana" />
-        <argument
-            android:name="descripcion"
-            app:argType="string" />
+        android:label="Datos de Causa"
+        tools:layout="@layout/datos_causa_fragment">
         <action
             android:id="@+id/action_datos_causa_to_datosDonaciones"
             app:destination="@id/datosDonaciones" />
+        <argument
+            android:name="titulo"
+            android:defaultValue="Fundación Dibujando un Mañana"
+            app:argType="string" />
+        <argument
+            android:name="descripcion"
+            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/payPalConfirmation"
+        android:name="mx.itesm.dibujandoapp.donaciones.PayPalConfirmation"
+        android:label="@string/label_confirmation_paypal" />
 </navigation>

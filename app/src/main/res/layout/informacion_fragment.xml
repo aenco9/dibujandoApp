@@ -40,14 +40,14 @@
                 android:editable="false"
                 android:ems="10"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
                 android:text="¡Somos Fundación Dibujando un Mañana!"
                 android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="29sp"
+                android:textSize="39sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -55,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Nos dedicamos a impulsar el desarrollo social de niños y adolescentes en situación del vulnerabilidad en México y América Central con un modelo de inversión social que entrelaza la voluntad de ayudar de diversos actores y la transforma en programas sociales basados en los derechos humanos que generan impactos positivos a largo plazo."
                 android:textSize="18sp" />
 
@@ -101,14 +102,14 @@
                 android:clickable="false"
                 android:ems="10"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
                 android:text="No hay barreras imposibles cuando existe la voluntad de ayudar y alguien que sabe hacerlo"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="29sp"
+                android:textSize="39sp"
                 android:visibility="visible" />
 
             <ImageView
@@ -130,14 +131,14 @@
                 android:clickable="false"
                 android:ems="10"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
                 android:text="Nuestra Historia"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="29sp"
+                android:textSize="39sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
 
@@ -146,6 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="En octubre de 1997 nació Fundación Dibujando un Mañana, A.C. con el objetivo de invertir en instituciones que atienden a niños y adolescentes.\n\nHemos vivido muchos acontecimientos en 20 años, con siete presidentes, 40 miembros del Consejo Directivo, diferentes asesores en ocho Comités de trabajo y el Equipo Operativo. \n\nEstamos convencidos de que la ruta es generar alianzas para crear condiciones idóneas que favorezcan la vida digna de todas las personas en nuestro país y la región."
                 android:textSize="18sp" />
 
@@ -168,14 +170,14 @@
                 android:clickable="false"
                 android:ems="10"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
                 android:text="Nuestro Equipo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="29sp"
+                android:textSize="39sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
 
@@ -220,7 +222,7 @@
                 android:backgroundTint="#43E49E"
                 android:clickable="false"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/questrial"
                 android:gravity="bottom"
                 android:text="Nombre y\ncargo"
                 android:textColor="#FFFFFF"
@@ -245,14 +247,14 @@
                 android:clickable="false"
                 android:ems="10"
                 android:enabled="false"
-                android:fontFamily="@font/playfair_display"
+                android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="false"
                 android:text="Nuestra plataforma estratégica"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="29sp"
+                android:textSize="39sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
 
@@ -263,6 +265,7 @@
                 android:background="@color/rojo"
                 android:ems="10"
                 android:enabled="false"
+                android:fontFamily="@font/questrial"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Principios"
@@ -276,6 +279,7 @@
                 android:background="@color/rojo"
                 android:ems="10"
                 android:enabled="false"
+                android:fontFamily="@font/questrial"
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Propositos"

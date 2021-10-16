@@ -45,7 +45,25 @@ class DatosDonaciones : Fragment() {
         subscribeToGenderChange()
         subscribeToEmailChange()
         subscribeToDateChange()
-        //TODO("revisar la fecha, el numero de telefono y ya")
+        subscribeToPhoneNumberChange()
+    }
+
+    private fun subscribeToPhoneNumberChange() {
+        binding.telefonoEditTextPhone.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                // User is modifying the phone number.
+            } else {
+                if (!viewModel.acceptablePhoneNumber(binding
+                        .telefonoEditTextPhone
+                        .text
+                        .toString())) {
+                    binding.telefonoEditTextPhone.setText("")
+                    Toast.makeText(getActivity(), "Por favor escriba un " +
+                            "número de teléfono con lada",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     private fun subscribeToDateChange() {
@@ -59,7 +77,8 @@ class DatosDonaciones : Fragment() {
                         Toast.LENGTH_SHORT).show()
                 }
             }
-        }    }
+        }
+    }
 
     private fun subscribeToEmailChange() {
         binding.correoEditTextEmail.setOnFocusChangeListener { _, hasFocus ->
@@ -104,7 +123,7 @@ class DatosDonaciones : Fragment() {
                     Toast.LENGTH_LONG).show()
             } else {
                 val myAction = DatosDonacionesDirections
-                    .actionDatosDonacionesToPaypalDonation(args.monto)
+                    .actionDatosDonacionesToPaypalDonation(args.monto, args.titulo)
                 findNavController().navigate(myAction)
             }
         }

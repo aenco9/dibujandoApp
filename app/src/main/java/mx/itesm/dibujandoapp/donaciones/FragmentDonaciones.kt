@@ -43,12 +43,24 @@ class FragmentDonaciones : Fragment() {
 
     private fun respondToTaps() {
 
-        /*binding.campaignImageViewBtn1.setOnClickListener {
-            findNavController().navigate(myAction)
+        binding.campaignImageViewBtn1.setOnClickListener {
+            val actionForCampaign1 = FragmentDonacionesDirections
+                .actionFragmentDonacionesToDatosCausa("Entre amigos",
+                    "¡Estamos buscando a 500 Entre Amigos! ¡Súmate y forma " +
+                            "parte de una comunidad de personas que está contribuyendo a " +
+                            "mejorar la vida de miles de niñas y niños!")
+            findNavController().navigate(actionForCampaign1)
         }
+
         binding.campaignImageViewBtn2.setOnClickListener {
-            findNavController().navigate(myAction)
-        }*/
+            val actionForCampaign1 = FragmentDonacionesDirections
+                .actionFragmentDonacionesToDatosCausa("Juntos Otra Vez",
+                    "Gracias a tus aportaciones seguimos juntos con el objetivo " +
+                            "de mantener espacios seguros para niñas, niños y adolescentes de A " +
+                            "Favor del Niño I.A.P. y CAYAM A.C. #VolverSeguros")
+            findNavController().navigate(actionForCampaign1)
+        }
+
         binding.payPalDonateOnceBtn.setOnClickListener {
             if (binding.montoPaypalEditTextDecimal.text.isEmpty()) {
                 Toast.makeText(getActivity(), "Por favor llene el campo " +

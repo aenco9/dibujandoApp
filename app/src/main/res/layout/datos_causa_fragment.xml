@@ -23,7 +23,7 @@
         android:id="@+id/tvTituloSeleccionado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/playfair_display"
+        android:fontFamily="@font/playfair_display_bold"
         android:text="TextView"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"

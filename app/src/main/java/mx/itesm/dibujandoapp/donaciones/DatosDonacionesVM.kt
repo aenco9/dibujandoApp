@@ -24,4 +24,7 @@ class DatosDonacionesVM: ViewModel() {
     public fun acceptableDate(date: String): Boolean {
         return modeloDonaciones.acceptableDate(date)//poner funcion en modelo
     }
+    public fun acceptablePhoneNumber(phoneNumber: String): Boolean {
+        return modeloDonaciones.acceptablePhoneNumber(phoneNumber)
+    }
 }

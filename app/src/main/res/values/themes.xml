@@ -12,8 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:fontFamily">@font/palatino</item>
-        <item name="fontFamily">@font/palatino</item>
+        <!-- <item name="android:fontFamily">@font/playfair_display_bold</item>
+        <item name="fontFamily">@font/playfair_display_bold</item> -->
     </style>
 
     <style name="Theme.DibujandoApp.NoActionBar">

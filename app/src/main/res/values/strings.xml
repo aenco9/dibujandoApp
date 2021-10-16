@@ -3,7 +3,7 @@
     Autores:
         Luis Ignacio Ferro Salinas
     Última modificación:
-        6 de octubre de 2021.
+        15 de octubre de 2021.
     -->
 
     <string name="app_name">dibujandoApp</string>
@@ -52,7 +52,7 @@
     <string name="hint_genero">Género (M/F)</string>
     <string name="hint_fecha_nacimiento">Fecha de nacimiento (dd/mm/aaaa)</string>
     <string name="hint_municipio">Municipio</string>
-    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_telefono">Teléfono con lada</string>
     <string name="hint_correo">Correo electrónico</string>
     <string name="hint_deducible">Desea deducible?</string>
     <string name="boton_donar_datos">Donar</string>
@@ -60,4 +60,8 @@
     <string name="label_datos_donacion">Datos de donación</string>
     <!-- Strings de recurso de layout de donacion de paypal -->
     <string name="label_paypal_donation">Donación con PayPal</string>
+    <!-- Strings de recurso de layout de confirmacion de paypal -->
+    <string name="label_confirmation_paypal">Comprobante</string>
+    <string name="confirmation_paypal">Felicidades, se ha realizado la donación. ¡Muchas gracias!</string>
+
 </resources>

@@ -2,6 +2,7 @@ package mx.itesm.dibujandoapp.donaciones
 
 import android.widget.Toast
 import com.google.android.material.internal.ContextUtils.getActivity
+import java.text.NumberFormat
 
 /**
  * Autor:
@@ -18,6 +19,36 @@ class ModeloDonaciones {
         return "@" in email && "." in email
     }
     public fun acceptableDate(date: String): Boolean {
-        return true
+        var numeroDiagonales = date.count{ "/".contains(it) }
+        if (numeroDiagonales == 2 && ("." !in date) and ("-" !in date)) {
+            return try {
+                var listaNumeros = date.split("/")
+                var day = listaNumeros[0].toInt()
+                var month = listaNumeros[1].toInt()
+                var year = listaNumeros[2].toInt()
+                println(" dia $day mes $month ano $year \n")
+                (day > 0) and
+                        (day < 32) and
+                        (month > 0) and
+                        (month < 13) and
+                        (year > 0) and
+                        (year < 2022)
+            } catch (e: NumberFormatException) {
+                print("excepcion en el sistema")
+                false
+            }
+        } else {
+            println("diagononales mal o simbolos extranos")
+            return false
+        }
+    }
+
+    public fun acceptablePhoneNumber(phoneNumber: String): Boolean {
+        try {
+            val stripped = phoneNumber.replace(" ", "")
+            return stripped.matches("[0-9]+".toRegex()) and (stripped.length==10)
+        } catch(e: java.lang.NumberFormatException) {
+            return false
+        }
     }
 }

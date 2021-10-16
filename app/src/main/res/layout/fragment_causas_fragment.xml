@@ -36,7 +36,8 @@
                 android:fontFamily="@font/playfair_display_bold"
                 android:text="Nuestras causas"
                 android:textAlignment="center"
-                android:textSize="33sp"
+                android:textColor="@color/grey_main"
+                android:textSize="39sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -48,6 +49,7 @@
                 android:paddingBottom="16dp"
                 android:text="Ayuda ahora"
                 android:textAlignment="center"
+                android:textColor="@color/grey_main"
                 android:textSize="18sp" />
 
             <androidx.recyclerview.widget.RecyclerView
