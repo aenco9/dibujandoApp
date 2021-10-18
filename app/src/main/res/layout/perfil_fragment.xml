@@ -72,7 +72,7 @@
 
     <Button
         android:id="@+id/btnLogOut"
-        style="@android:style/Widget.Material.Button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cerrar sesión"

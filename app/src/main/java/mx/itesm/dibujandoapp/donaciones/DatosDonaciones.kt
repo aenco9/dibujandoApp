@@ -95,12 +95,12 @@ class DatosDonaciones : Fragment() {
     }
 
     private fun subscribeToGenderChange() {
-        binding.generoEditText.setOnFocusChangeListener { _, hasFocus ->
+        binding.nombreText.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 // User is modifying the gender.
             } else {
-                if (!viewModel.acceptableGender(binding.generoEditText.text.toString())) {
-                    binding.generoEditText.setText("")
+                if (!viewModel.acceptableGender(binding.nombreText.text.toString())) {
+                    binding.nombreText.setText("")
                     Toast.makeText(getActivity(), "Por favor escriba M para masculino" +
                             " o F para femenino",
                         Toast.LENGTH_SHORT).show()
@@ -114,7 +114,7 @@ class DatosDonaciones : Fragment() {
         binding.donarDatosDonacionesBtn.setOnClickListener {
             if (binding.nombreEditText.text.isEmpty() or
                 binding.fechaEditTextDate.text.isEmpty() or
-                binding.generoEditText.text.isEmpty() or
+                binding.nombreText.text.isEmpty() or
                 binding.correoEditTextEmail.text.isEmpty() or
                 binding.telefonoEditTextPhone.text.isEmpty() or
                 binding.municipioEditText.text.isEmpty()) {

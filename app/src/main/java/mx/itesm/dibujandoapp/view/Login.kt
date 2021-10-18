@@ -29,6 +29,7 @@ class login : Fragment() {
     private lateinit var viewModel: LoginVM
 
     private lateinit var binding: LoginFragmentBinding
+    private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +51,18 @@ class login : Fragment() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        val usuario = mAuth.currentUser
+        if (usuario != null) {
+            // Lanzar actividad perfil
+            val accion = loginDirections.actionLoginToPerfilFragment()
+            findNavController().navigate(accion)
+        } else {
+            println("Hacer Login...")
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -60,9 +73,10 @@ class login : Fragment() {
                     FirebaseAuth.getInstance().currentUser
                     println("Bienvenido: ${usuario?.displayName}")
                     println("Correo: ${usuario?.email}")
-                    println("Correo: ${usuario?.uid}")
-                    // Lanzar otra actividad
-
+                    println("Token: ${usuario?.uid}")
+                    // Lanzar actividad perfil
+                    val accion = loginDirections.actionLoginToPerfilFragment()
+                    findNavController().navigate(accion)
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
                     println("Cancelado...")
@@ -107,7 +121,5 @@ class login : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LoginVM::class.java)
-        // TODO: Use the ViewModel
     }
-
 }
