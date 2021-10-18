@@ -57,6 +57,10 @@ class PerfilFragment : Fragment() {
         binding.btnLogOut.setOnClickListener {
             AuthUI.getInstance().signOut(requireContext())
             print("Log Out Exitoso")
+
+            // Regresar a la pantalla principal
+            val accion = PerfilFragmentDirections.actionPerfilFragmentToInformacionFragment()
+            findNavController().navigate(accion)
         }
     }
 }
