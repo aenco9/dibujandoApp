@@ -124,8 +124,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="279" />
-                            <option name="y" value="12" />
+                            <option name="x" value="725" />
+                            <option name="y" value="190" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -197,6 +197,27 @@
                           <Point>
                             <option name="x" value="777" />
                             <option name="y" value="783" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_paypalDonation_to_payPalConfirmation">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="perfilFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="351" />
+                            <option name="y" value="-89" />
                           </Point>
                         </option>
                       </LayoutPositions>

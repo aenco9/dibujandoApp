@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_login_to_pantallaRegistro"
             app:destination="@id/pantallaRegistro" />
+        <action
+            android:id="@+id/action_login_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/pantallaRegistro"
@@ -112,4 +115,16 @@
         android:id="@+id/payPalConfirmation"
         android:name="mx.itesm.dibujandoapp.donaciones.PayPalConfirmation"
         android:label="@string/label_confirmation_paypal" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="mx.itesm.dibujandoapp.PerfilFragment"
+        android:label="perfil_fragment"
+        tools:layout="@layout/perfil_fragment" >
+        <action
+            android:id="@+id/action_perfilFragment_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_perfilFragment_to_informacion_fragment"
+            app:destination="@id/informacion_fragment" />
+    </fragment>
 </navigation>
