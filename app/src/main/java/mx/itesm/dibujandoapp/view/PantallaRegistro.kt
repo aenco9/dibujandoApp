@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.R
@@ -34,20 +35,23 @@ class PantallaRegistro : Fragment() {
         confiugurarEventos()
         return vista
     }
+    private val usuario = FirebaseAuth.getInstance().currentUser
 
     private fun confiugurarEventos() {
+
         binding.btnRegistar2.setOnClickListener {
 
-            //Se tiene que modificar el Usuario.kt por que falta el ID que da google y ponerlo abajo 
+           
+            val id = usuario.toString()
             val nombre = binding.nombreText.text.toString()
             val fecha = binding.FechaText.text.toString()
             val correo = binding.CorreoText.text.toString()
 
-            val usuario = Usuario(nombre,fecha,correo)
+            val usuario = Usuario(id,nombre,fecha,correo)
 
 
-            //aqui tenemos que poner el ID recuperado que da google para que sea la PK no el nombre
-            val referencia = baseDatos.getReference("Usuarios/$nombre")
+
+            val referencia = baseDatos.getReference("Usuarios/$id")
             referencia.setValue(usuario)
         }
     }
