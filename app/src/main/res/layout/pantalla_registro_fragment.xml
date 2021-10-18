@@ -39,7 +39,7 @@
                 android:textColor="#000000" />
 
             <EditText
-                android:id="@+id/fechaEditTextDate"
+                android:id="@+id/FechaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"
@@ -51,7 +51,7 @@
                 android:textAlignment="center" />
 
             <EditText
-                android:id="@+id/correoEditTextEmail"
+                android:id="@+id/CorreoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"

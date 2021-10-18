@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
 import mx.itesm.dibujandoapp.databinding.PantallaRegistroFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
+import mx.itesm.dibujandoapp.viewmodel.Usuario
 
 class PantallaRegistro : Fragment() {
 
@@ -21,14 +24,28 @@ class PantallaRegistro : Fragment() {
     private lateinit var viewModel: PantallaRegistroVM
 
     private lateinit var binding: PantallaRegistroFragmentBinding
-
+    private val baseDatos = Firebase.database
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding= PantallaRegistroFragmentBinding.inflate(layoutInflater)
         val vista= binding.root
+        confiugurarEventos()
         return vista
+    }
+
+    private fun confiugurarEventos() {
+        binding.btnRegistar2.setOnClickListener {
+            val nombre = binding.nombreText.text.toString()
+            val fecha = binding.FechaText.text.toString()
+            val correo = binding.CorreoText.text.toString()
+
+            val usuario = Usuario(nombre,fecha,correo)
+
+            val referencia = baseDatos.getReference("Usuarios/$nombre")
+            referencia.setValue(usuario)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
