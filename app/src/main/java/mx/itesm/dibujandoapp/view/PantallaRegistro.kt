@@ -37,12 +37,16 @@ class PantallaRegistro : Fragment() {
 
     private fun confiugurarEventos() {
         binding.btnRegistar2.setOnClickListener {
+
+            //Se tiene que modificar el Usuario.kt por que falta el ID que da google y ponerlo abajo 
             val nombre = binding.nombreText.text.toString()
             val fecha = binding.FechaText.text.toString()
             val correo = binding.CorreoText.text.toString()
 
             val usuario = Usuario(nombre,fecha,correo)
 
+
+            //aqui tenemos que poner el ID recuperado que da google para que sea la PK no el nombre
             val referencia = baseDatos.getReference("Usuarios/$nombre")
             referencia.setValue(usuario)
         }
