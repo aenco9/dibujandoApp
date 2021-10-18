@@ -19,6 +19,7 @@ import mx.itesm.dibujandoapp.viewmodel.LoginVM
 
 class login : Fragment() {
 
+    var agree = false
     companion object {
         fun newInstance() = login()
     }
@@ -60,6 +61,7 @@ class login : Fragment() {
                     println("Correo: ${usuario?.email}")
                     println("Correo: ${usuario?.uid}")
                     // Lanzar otra actividad
+                    agree = true
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
                     println("Cancelado...")
@@ -90,11 +92,12 @@ class login : Fragment() {
         )
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-
+        if (agree){
+            findNavController().navigate(R.id.action_login_to_pantallaRegistro)
+        }
        /* binding.btnRegistar.setOnClickListener {
             findNavController().navigate(R.id.action_login_to_pantallaRegistro)
         }*/
