@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
@@ -57,6 +58,8 @@ class PerfilFragment : Fragment() {
         binding.btnLogOut.setOnClickListener {
             AuthUI.getInstance().signOut(requireContext())
             print("Log Out Exitoso")
+            Toast.makeText(getActivity(), "Sesión cerrada exitosamente",
+                Toast.LENGTH_SHORT).show()
 
             // Regresar a la pantalla principal
             val accion = PerfilFragmentDirections.actionPerfilFragmentToInformacionFragment()

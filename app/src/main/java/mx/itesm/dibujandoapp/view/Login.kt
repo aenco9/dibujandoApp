@@ -72,7 +72,9 @@ class login : Fragment() {
                     println("Bienvenido: ${usuario?.displayName}")
                     println("Correo: ${usuario?.email}")
                     println("Token: ${usuario?.uid}")
-                    // Lanzar otra actividad
+                    // Lanzar actividad perfil
+                    val accion = loginDirections.actionLoginToPerfilFragment()
+                    findNavController().navigate(accion)
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
                     println("Cancelado...")
