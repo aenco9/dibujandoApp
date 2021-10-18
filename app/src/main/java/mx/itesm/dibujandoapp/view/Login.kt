@@ -28,6 +28,7 @@ class login : Fragment() {
     private lateinit var viewModel: LoginVM
 
     private lateinit var binding: LoginFragmentBinding
+    private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +49,18 @@ class login : Fragment() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        val usuario = mAuth.currentUser
+        if (usuario != null) {
+            // Lanzar actividad perfil
+            val accion = loginDirections.actionLoginToPerfilFragment()
+            findNavController().navigate(accion)
+        } else {
+            println("Hacer Login...")
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -58,7 +71,7 @@ class login : Fragment() {
                     FirebaseAuth.getInstance().currentUser
                     println("Bienvenido: ${usuario?.displayName}")
                     println("Correo: ${usuario?.email}")
-                    println("Correo: ${usuario?.uid}")
+                    println("Token: ${usuario?.uid}")
                     // Lanzar otra actividad
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
