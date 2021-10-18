@@ -46,6 +46,7 @@ class login : Fragment() {
         }
         binding.btnRegistar.setOnClickListener {
             autenticar()
+            agree = true
         }
     }
 
@@ -61,7 +62,7 @@ class login : Fragment() {
                     println("Correo: ${usuario?.email}")
                     println("Correo: ${usuario?.uid}")
                     // Lanzar otra actividad
-                    agree = true
+
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
                     println("Cancelado...")
