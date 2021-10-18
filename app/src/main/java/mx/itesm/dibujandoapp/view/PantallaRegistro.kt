@@ -32,17 +32,17 @@ class PantallaRegistro : Fragment() {
     ): View? {
         binding= PantallaRegistroFragmentBinding.inflate(layoutInflater)
         val vista= binding.root
-        confiugurarEventos()
+        configurarEventos()
         return vista
     }
     private val usuario = FirebaseAuth.getInstance().currentUser
 
-    private fun confiugurarEventos() {
+    private fun configurarEventos() {
 
         binding.btnRegistar2.setOnClickListener {
 
            
-            val id = usuario.toString()
+            val id = usuario?.uid.toString()
             val nombre = binding.nombreText.text.toString()
             val fecha = binding.FechaText.text.toString()
             val correo = binding.CorreoText.text.toString()
