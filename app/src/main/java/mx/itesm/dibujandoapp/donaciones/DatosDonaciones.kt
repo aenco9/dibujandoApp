@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.auth.FirebaseAuth
 import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentDatosDonacionesBinding
 
@@ -29,6 +30,8 @@ class DatosDonaciones : Fragment() {
     private lateinit var binding: FragmentDatosDonacionesBinding
     private val args: DatosDonacionesArgs by navArgs()
     private val viewModel: DatosDonacionesVM by viewModels()
+    private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val usuario = mAuth.currentUser
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,6 +44,11 @@ class DatosDonaciones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if(usuario != null)
+        {
+            binding.nombreEditText.setText(usuario.displayName)
+            binding.correoEditTextEmail.setText(usuario.email)
+        }
         respondToTaps()
         subscribeToGenderChange()
         subscribeToEmailChange()

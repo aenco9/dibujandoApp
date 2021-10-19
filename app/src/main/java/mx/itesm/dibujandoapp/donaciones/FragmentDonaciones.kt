@@ -29,7 +29,7 @@ class FragmentDonaciones : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // The binding contains the view that this onCreateView function returns.
         binding = FragmentDonacionesBinding.inflate(layoutInflater)
         return binding.root
@@ -45,15 +45,6 @@ class FragmentDonaciones : Fragment() {
 
         binding.campaignImageViewBtn1.setOnClickListener {
             val actionForCampaign1 = FragmentDonacionesDirections
-                .actionFragmentDonacionesToDatosCausa("Entre amigos",
-                    "¡Estamos buscando a 500 Entre Amigos! ¡Súmate y forma " +
-                            "parte de una comunidad de personas que está contribuyendo a " +
-                            "mejorar la vida de miles de niñas y niños!")
-            findNavController().navigate(actionForCampaign1)
-        }
-
-        binding.campaignImageViewBtn2.setOnClickListener {
-            val actionForCampaign1 = FragmentDonacionesDirections
                 .actionFragmentDonacionesToDatosCausa("Juntos Otra Vez",
                     "Gracias a tus aportaciones seguimos juntos con el objetivo " +
                             "de mantener espacios seguros para niñas, niños y adolescentes de A " +
@@ -61,18 +52,27 @@ class FragmentDonaciones : Fragment() {
             findNavController().navigate(actionForCampaign1)
         }
 
+        binding.campaignImageViewBtn2.setOnClickListener {
+            val actionForCampaign1 = FragmentDonacionesDirections
+                .actionFragmentDonacionesToDatosCausa("Entre amigos",
+                    "¡Estamos buscando a 500 Entre Amigos! ¡Súmate y forma " +
+                            "parte de una comunidad de personas que está contribuyendo a " +
+                            "mejorar la vida de miles de niñas y niños!")
+            findNavController().navigate(actionForCampaign1)
+        }
+
         binding.payPalDonateOnceBtn.setOnClickListener {
             if (binding.montoPaypalEditTextDecimal.text.isEmpty()) {
                 Toast.makeText(getActivity(), "Por favor llene el campo " +
                         "del Monto antes de continuar.",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_LONG).show()
             } else if (binding.montoPaypalEditTextDecimal.text.toString().toFloat() >= 9999999.99) {
                 binding.montoPaypalEditTextDecimal.setText("")
                 Toast.makeText(
                     getActivity(), "Por favor introduzca un monto" +
                             " menor a 9999999.99",
                     Toast.LENGTH_LONG
-                ).show();
+                ).show()
             } else {
                 val actionWithAmount = FragmentDonacionesDirections
                     .actionFragmentDonacionesToDatosDonaciones(binding.montoPaypalEditTextDecimal
