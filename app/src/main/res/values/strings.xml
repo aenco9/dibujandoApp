@@ -63,5 +63,6 @@
     <!-- Strings de recurso de layout de confirmacion de paypal -->
     <string name="label_confirmation_paypal">Comprobante</string>
     <string name="confirmation_paypal">Felicidades, se ha realizado la donación. ¡Muchas gracias!</string>
+    <string name="confirm_paypal_button">Entendido</string>
 
 </resources>

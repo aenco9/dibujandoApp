@@ -28,39 +28,28 @@
                 android:id="@+id/nombreText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10pt"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10pt"
                 android:ems="10"
-                android:fontFamily="@font/palatino"
+                android:fontFamily="@font/questrial"
                 android:hint="Nombre de usuario"
-                android:inputType="textPersonName"
-                android:textAlignment="center"
-                android:textColor="#000000" />
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/FechaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="23dp"
                 android:ems="10"
+                android:fontFamily="@font/questrial"
                 android:hint="Fecha de nacimiento (DD/MM/AAAA)"
-                android:inputType="date"
-                android:textAlignment="center" />
+                android:inputType="date" />
 
             <EditText
                 android:id="@+id/CorreoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="23dp"
                 android:ems="10"
+                android:fontFamily="@font/questrial"
                 android:hint="Correo"
-                android:inputType="textEmailAddress"
-                android:textAlignment="center" />
+                android:inputType="textEmailAddress" />
 
             <Button
                 android:id="@+id/btnRegistar2"
@@ -72,7 +61,7 @@
                 android:layout_marginEnd="10pt"
                 android:backgroundTint="#FF9800"
                 android:backgroundTintMode="add"
-                android:fontFamily="@font/palatino"
+                android:fontFamily="@font/questrial"
                 android:text="Crear nueva cuenta"
                 android:textColor="@color/white" />
 

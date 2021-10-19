@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <EditText
-            android:id="@+id/FechaText"
+            android:id="@+id/fechaEditTextDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -53,7 +53,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nombreEditText" />
 
         <EditText
-            android:id="@+id/nombreText"
+            android:id="@+id/generoEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -66,10 +66,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FechaText" />
+            app:layout_constraintTop_toBottomOf="@+id/fechaEditTextDate" />
 
         <EditText
-            android:id="@+id/CorreoText"
+            android:id="@+id/correoEditTextEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -81,7 +81,7 @@
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nombreText" />
+            app:layout_constraintTop_toBottomOf="@+id/generoEditText" />
 
         <EditText
             android:id="@+id/telefonoEditTextPhone"
@@ -96,7 +96,7 @@
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CorreoText" />
+            app:layout_constraintTop_toBottomOf="@+id/correoEditTextEmail" />
 
         <EditText
             android:id="@+id/municipioEditText"

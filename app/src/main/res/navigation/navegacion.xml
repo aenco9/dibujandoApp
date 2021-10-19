@@ -114,7 +114,11 @@
     <fragment
         android:id="@+id/payPalConfirmation"
         android:name="mx.itesm.dibujandoapp.donaciones.PayPalConfirmation"
-        android:label="@string/label_confirmation_paypal" />
+        android:label="@string/label_confirmation_paypal" >
+        <action
+            android:id="@+id/action_payPalConfirmation_to_fragmentDonaciones"
+            app:destination="@id/fragmentDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="mx.itesm.dibujandoapp.PerfilFragment"

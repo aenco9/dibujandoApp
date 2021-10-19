@@ -5,8 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import mx.itesm.dibujandoapp.databinding.FragmentPayPalConfirmationBinding
 
+/**
+ * Autor:
+ * Luis Ignacio Ferro Salinas
+ * Última modificación:
+ * 18 de octubre de 2021
+ */
 
 class PayPalConfirmation : Fragment() {
 
@@ -23,5 +30,13 @@ class PayPalConfirmation : Fragment() {
     ): View? {
         binding = FragmentPayPalConfirmationBinding.inflate(layoutInflater)
         return binding.root
+        respondToConfirmButtonTap()
+    }
+
+    private fun respondToConfirmButtonTap() {
+        binding.confirmPayPalButton.setOnClickListener {
+            val myAction = PayPalConfirmationDirections.actionPayPalConfirmationToFragmentDonaciones()
+            findNavController().navigate(myAction)
+        }
     }
 }
