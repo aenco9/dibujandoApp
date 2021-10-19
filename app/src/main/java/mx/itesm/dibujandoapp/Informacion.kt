@@ -6,26 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import mx.itesm.dibujandoapp.databinding.InformacionFragmentBinding
 
 class Informacion : Fragment() {
 
-    companion object {
-        fun newInstance() = Informacion()
-    }
-
     private lateinit var viewModel: InformacionVM
+    private lateinit var binding: InformacionFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.informacion_fragment, container, false)
+        binding = InformacionFragmentBinding.inflate(layoutInflater)
+        return binding.root
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InformacionVM::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }

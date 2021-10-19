@@ -152,83 +152,6 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/corazon4"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="48dp"
-                android:background="#FFFFFF"
-                android:src="@drawable/corazon" />
-
-            <EditText
-                android:id="@+id/subtitulo4"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:layout_weight="60"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                android:clickable="false"
-                android:ems="10"
-                android:enabled="false"
-                android:fontFamily="@font/playfair_display_bold"
-                android:inputType="textMultiLine|textPersonName"
-                android:nestedScrollingEnabled="false"
-                android:singleLine="true"
-                android:text="Nuestro Equipo"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="39sp"
-                android:textStyle="bold"
-                android:visibility="visible" />
-
-            <LinearLayout
-                android:layout_width="403dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="bottom"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="60dp"
-                    android:layout_height="80dp"
-                    android:layout_weight="1"
-                    android:rotationY="180"
-                    android:src="@drawable/derecha" />
-
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/foto" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="60dp"
-                    android:layout_height="80dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/derecha" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/nombre"
-                android:layout_width="240dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="32dp"
-                android:background="@android:color/background_dark"
-                android:backgroundTint="#43E49E"
-                android:clickable="false"
-                android:enabled="false"
-                android:fontFamily="@font/questrial"
-                android:gravity="bottom"
-                android:text="Nombre y\ncargo"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp" />
-
-            <ImageView
                 android:id="@+id/corazon5"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -240,7 +163,7 @@
             <EditText
                 android:id="@+id/subtitulo5"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="60"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
@@ -250,6 +173,7 @@
                 android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
+                android:paddingBottom="16dp"
                 android:singleLine="false"
                 android:text="Nuestra plataforma estratégica"
                 android:textAlignment="center"
