@@ -17,12 +17,9 @@ import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.LoginVM
 
-class login : Fragment() {
+class Login : Fragment() {
 
-    var agree = false
-    companion object {
-        fun newInstance() = login()
-    }
+    var destiny: Int = -1
 
     private val CODIGO_SIGNIN: Int = 500
 
@@ -37,17 +34,19 @@ class login : Fragment() {
     ): View? {
         binding= LoginFragmentBinding.inflate(layoutInflater)
         val vista= binding.root
-        configurarEvento()
         return vista
     }
 
     private fun configurarEvento() {
         binding.btnRegistrar2.setOnClickListener {
-            autenticar()
+            autenticar() // boton de arriba
+            // Lanzar actividad perfil
+            // Validar que perfil esta creado en la base de datos.
+            destiny = 0
         }
         binding.btnRegistar.setOnClickListener {
             autenticar()
-            agree = true
+            destiny = 1
         }
     }
 
@@ -56,7 +55,7 @@ class login : Fragment() {
         val usuario = mAuth.currentUser
         if (usuario != null) {
             // Lanzar actividad perfil
-            val accion = loginDirections.actionLoginToPerfilFragment()
+            val accion = LoginDirections.actionLogin2ToPerfilFragment()
             findNavController().navigate(accion)
         } else {
             println("Hacer Login...")
@@ -65,7 +64,6 @@ class login : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         if (requestCode == CODIGO_SIGNIN) {
             when (resultCode) {
                 RESULT_OK -> {
@@ -74,9 +72,13 @@ class login : Fragment() {
                     println("Bienvenido: ${usuario?.displayName}")
                     println("Correo: ${usuario?.email}")
                     println("Token: ${usuario?.uid}")
-                    // Lanzar actividad perfil
-                    val accion = loginDirections.actionLoginToPerfilFragment()
-                    findNavController().navigate(accion)
+                    if (destiny == 0) {
+                        val accion = LoginDirections.actionLogin2ToPerfilFragment()
+                        findNavController().navigate(accion)
+                    } else if (destiny == 1) {
+                        val toFillInfo = LoginDirections.actionLogin2ToPantallaRegistro(FirebaseAuth.getInstance().currentUser?.email.toString())
+                        findNavController().navigate(toFillInfo)
+                    }
                 }
                 AppCompatActivity.RESULT_CANCELED -> {
                     println("Cancelado...")
@@ -91,7 +93,6 @@ class login : Fragment() {
                 }
             }
         }
-
     }
 
     private fun autenticar() {
@@ -110,12 +111,7 @@ class login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-        if (agree){
-            findNavController().navigate(R.id.action_login_to_pantallaRegistro)
-        }
-       /* binding.btnRegistar.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_pantallaRegistro)
-        }*/
+        configurarEvento()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

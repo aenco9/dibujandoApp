@@ -36,7 +36,7 @@ class RegistroExitoso : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
         binding.btnEntendido.setOnClickListener {
-            findNavController().navigate(R.id.action_registroExitoso_to_login)
+            findNavController().navigate(RegistroExitosoDirections.actionRegistroExitosoToLogin2())
         }
 
     }

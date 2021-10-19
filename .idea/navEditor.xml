@@ -131,23 +131,14 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="login">
+                  <entry key="login2">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1" />
-                            <option name="y" value="14" />
+                            <option name="x" value="-26" />
+                            <option name="y" value="-126" />
                           </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_login_to_pantallaRegistro">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -163,11 +154,6 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_pantallaRegistro_to_login">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
                             <entry key="action_pantallaRegistro_to_registroExitoso">
                               <value>
                                 <LayoutPositions />
@@ -186,6 +172,15 @@
                             <option name="x" value="1048" />
                             <option name="y" value="791" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_payPalConfirmation_to_fragmentDonaciones">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -216,9 +211,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="351" />
-                            <option name="y" value="-89" />
+                            <option name="x" value="385" />
+                            <option name="y" value="-131" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_perfilFragment_to_informacion_fragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -231,15 +235,6 @@
                             <option name="x" value="253" />
                             <option name="y" value="311" />
                           </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_registroExitoso_to_login">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

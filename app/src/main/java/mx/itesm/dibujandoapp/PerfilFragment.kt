@@ -30,7 +30,7 @@ class PerfilFragment : Fragment() {
             println("Correo: ${usuario.email}")
         } else {
             // Hacer Login
-            val accion = PerfilFragmentDirections.actionPerfilFragmentToLogin()
+            val accion = PerfilFragmentDirections.actionPerfilFragmentToInformacionFragment()
             findNavController().navigate(accion)
         }
     }

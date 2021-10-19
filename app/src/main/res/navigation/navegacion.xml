@@ -6,28 +6,16 @@
     app:startDestination="@id/informacion_fragment">
 
     <fragment
-        android:id="@+id/login"
-        android:name="mx.itesm.dibujandoapp.view.login"
-        android:label="@string/perfil"
-        tools:layout="@layout/login_fragment">
-        <action
-            android:id="@+id/action_login_to_pantallaRegistro"
-            app:destination="@id/pantallaRegistro" />
-        <action
-            android:id="@+id/action_login_to_perfilFragment"
-            app:destination="@id/perfilFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/pantallaRegistro"
         android:name="mx.itesm.dibujandoapp.view.PantallaRegistro"
         android:label="Registro"
         tools:layout="@layout/pantalla_registro_fragment">
         <action
-            android:id="@+id/action_pantallaRegistro_to_login"
-            app:destination="@id/login" />
-        <action
             android:id="@+id/action_pantallaRegistro_to_registroExitoso"
             app:destination="@id/registroExitoso" />
+        <argument
+            android:name="correoGoogle"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registroExitoso"
@@ -35,8 +23,8 @@
         android:label="registro_exitoso_fragment2"
         tools:layout="@layout/registro_exitoso_fragment2" >
         <action
-            android:id="@+id/action_registroExitoso_to_login"
-            app:destination="@id/login" />
+            android:id="@+id/action_registroExitoso_to_login2"
+            app:destination="@id/login2" />
     </fragment>
     <fragment
         android:id="@+id/causasFrag"
@@ -122,13 +110,22 @@
     <fragment
         android:id="@+id/perfilFragment"
         android:name="mx.itesm.dibujandoapp.PerfilFragment"
-        android:label="perfil_fragment"
-        tools:layout="@layout/perfil_fragment" >
-        <action
-            android:id="@+id/action_perfilFragment_to_login"
-            app:destination="@id/login" />
+        android:label="Perfil"
+        tools:layout="@layout/perfil_fragment">
         <action
             android:id="@+id/action_perfilFragment_to_informacion_fragment"
             app:destination="@id/informacion_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login2"
+        android:name="mx.itesm.dibujandoapp.view.Login"
+        android:label="Login"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_login2_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_login2_to_pantallaRegistro"
+            app:destination="@id/pantallaRegistro" />
     </fragment>
 </navigation>
