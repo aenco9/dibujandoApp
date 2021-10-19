@@ -27,7 +27,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/corazon" />
+                android:src="@drawable/corazon"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/textView9"

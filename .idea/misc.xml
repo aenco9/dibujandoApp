@@ -14,16 +14,16 @@
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/font/poppins_medium.xml" value="0.1" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/activity_principal.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/activity_splash.xml" value="0.16203703703703703" />
-        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/app_bar_principal.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/content_principal.xml" value="0.10625" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/fragment_causas_fragment.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/informacion_fragment.xml" value="0.16203703703703703" />
-        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/login_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/pantalla_registro_fragment.xml" value="0.2" />
         <entry key="..\:/Users/erict/AndroidStudioProjects/DUM/app/src/main/res/layout/renglon_causa.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/activity_principal.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/activity_splash.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/app_bar_principal.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/content_principal.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/datos_causa_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/fragment_causas_fragment.xml" value="0.12864583333333332" />
+        <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/fragment_causas_fragment.xml" value="0.264" />
         <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/fragment_datos_donaciones.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/fragment_donaciones.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/joand/AndroidStudioProjects/dibujandoApp/app/src/main/res/layout/info_pago_fragment.xml" value="0.12864583333333332" />

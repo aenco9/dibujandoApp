@@ -55,6 +55,7 @@
         android:ems="10"
         android:hint="@string/hint_pay_pal_amount"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/donarDatosDonacionesBtn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
