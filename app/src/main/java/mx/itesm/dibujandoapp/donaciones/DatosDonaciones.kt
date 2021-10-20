@@ -13,8 +13,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentDatosDonacionesBinding
+import mx.itesm.dibujandoapp.view.LoginDirections
+import mx.itesm.dibujandoapp.viewmodel.Usuario
 
 /**
  *
@@ -31,6 +39,7 @@ class DatosDonaciones : Fragment() {
     private val args: DatosDonacionesArgs by navArgs()
     private val viewModel: DatosDonacionesVM by viewModels()
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var baseDatos: FirebaseDatabase
     private val usuario = mAuth.currentUser
 
     override fun onCreateView(
@@ -44,10 +53,25 @@ class DatosDonaciones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        baseDatos = Firebase.database
         if(usuario != null)
         {
-            binding.nombreEditText.setText(usuario.displayName)
-            binding.correoEditTextEmail.setText(usuario.email)
+            // Si el usuario hizo login, esto implica que sus datos están en Firebase.
+            val myReference = baseDatos.getReference("Usuarios/")
+            myReference.addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                val usuarioFirebase = snapshot.child(usuario?.uid.toString()).getValue(Usuario::class.java)
+                binding.nombreEditText.setText(usuario.displayName)
+                binding.correoEditTextEmail.setText(usuario.email)
+                binding.generoEditText.setText(usuarioFirebase?.genero)
+                binding.telefonoEditTextPhone.setText(usuarioFirebase?.telefono)
+                binding.municipioEditText.setText(usuarioFirebase?.municipio)
+                binding.fechaEditTextDate.setText(usuarioFirebase?.fecha)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
         }
         respondToTaps()
         subscribeToGenderChange()
@@ -120,23 +144,25 @@ class DatosDonaciones : Fragment() {
 
     private fun respondToTaps() {
 
-        // I need to check the state of the swi        binding.donarDatosDonacionesBtn.setOnClickListener {
-        //            if (binding.nombreEditText.text.isEmpty() or
-        //                binding.fechaEditTextDate.text.isEmpty() or
-        //                binding.generoEditText.text.isEmpty() or
-        //                binding.correoEditTextEmail.text.isEmpty() or
-        //                binding.telefonoEditTextPhone.text.isEmpty() or
-        //                binding.municipioEditText.text.isEmpty()) {
-        //                Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
-        //                        "correcta.",
-        //                    Toast.LENGTH_LONG).show()
-        //            } else {
-        //                val myAction = DatosDonacionesDirections
-        //                    .actionDatosDonacionesToPaypalDonation(args.monto, args.titulo)
-        //                findNavController().navigate(myAction)
-        //            }
-        //        }tch to know whether or not I have to
-        // nnonunce the message.
+        // I need to check the state of the swittch to know whether or not I have to
+                // annonunce the message.
+
+        binding.donarDatosDonacionesBtn.setOnClickListener {
+                    if (binding.nombreEditText.text.isEmpty() or
+                        binding.fechaEditTextDate.text.isEmpty() or
+                        binding.generoEditText.text.isEmpty() or
+                        binding.correoEditTextEmail.text.isEmpty() or
+                        binding.telefonoEditTextPhone.text.isEmpty() or
+                        binding.municipioEditText.text.isEmpty()) {
+                        Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
+                                "correcta.",
+                            Toast.LENGTH_LONG).show()
+                    } else {
+                        val myAction = DatosDonacionesDirections
+                            .actionDatosDonacionesToPaypalDonation(args.monto, args.titulo)
+                        findNavController().navigate(myAction)
+                    }
+        }
         binding.deducibleSwitch.setOnClickListener {
             if (binding.deducibleSwitch.isChecked()) {
                 Toast.makeText(getActivity(), "Por favor remita sus datos fiscales al " +

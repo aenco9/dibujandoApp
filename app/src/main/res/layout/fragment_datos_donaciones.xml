@@ -50,7 +50,7 @@
             android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nombreTextEdit" />
+            app:layout_constraintTop_toBottomOf="@+id/nombreEditText" />
 
         <EditText
             android:id="@+id/generoEditText"
@@ -96,7 +96,7 @@
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CorreoText" />
+            app:layout_constraintTop_toBottomOf="@+id/correoEditTextEmail" />
 
         <EditText
             android:id="@+id/municipioEditText"
