@@ -119,23 +119,23 @@ class DatosDonaciones : Fragment() {
 
 
     private fun respondToTaps() {
-        binding.donarDatosDonacionesBtn.setOnClickListener {
-            if (binding.nombreEditText.text.isEmpty() or
-                binding.fechaEditTextDate.text.isEmpty() or
-                binding.generoEditText.text.isEmpty() or
-                binding.correoEditTextEmail.text.isEmpty() or
-                binding.telefonoEditTextPhone.text.isEmpty() or
-                binding.municipioEditText.text.isEmpty()) {
-                Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
-                        "correcta.",
-                    Toast.LENGTH_LONG).show()
-            } else {
-                val myAction = DatosDonacionesDirections
-                    .actionDatosDonacionesToPaypalDonation(args.monto, args.titulo)
-                findNavController().navigate(myAction)
-            }
-        }
-        // I need to check the state of the switch to know whether or not I have to
+
+        // I need to check the state of the swi        binding.donarDatosDonacionesBtn.setOnClickListener {
+        //            if (binding.nombreEditText.text.isEmpty() or
+        //                binding.fechaEditTextDate.text.isEmpty() or
+        //                binding.generoEditText.text.isEmpty() or
+        //                binding.correoEditTextEmail.text.isEmpty() or
+        //                binding.telefonoEditTextPhone.text.isEmpty() or
+        //                binding.municipioEditText.text.isEmpty()) {
+        //                Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
+        //                        "correcta.",
+        //                    Toast.LENGTH_LONG).show()
+        //            } else {
+        //                val myAction = DatosDonacionesDirections
+        //                    .actionDatosDonacionesToPaypalDonation(args.monto, args.titulo)
+        //                findNavController().navigate(myAction)
+        //            }
+        //        }tch to know whether or not I have to
         // nnonunce the message.
         binding.deducibleSwitch.setOnClickListener {
             if (binding.deducibleSwitch.isChecked()) {

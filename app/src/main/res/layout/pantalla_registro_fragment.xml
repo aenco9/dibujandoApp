@@ -28,28 +28,94 @@
                 android:id="@+id/nombreText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:fontFamily="@font/questrial"
-                android:hint="Nombre de usuario"
-                android:inputType="textPersonName" />
+                android:hint="@string/hint_nombre"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
             <EditText
                 android:id="@+id/FechaText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:fontFamily="@font/questrial"
-                android:hint="Fecha de nacimiento (DD/MM/AAAA)"
-                android:inputType="date" />
+                android:hint="@string/hint_fecha_nacimiento"
+                android:inputType="date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nombreText" />
+
+            <EditText
+                android:id="@+id/generoEditTextR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="@font/questrial"
+                android:hint="@string/hint_genero"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FechaText" />
 
             <EditText
                 android:id="@+id/CorreoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/questrial"
-                android:inputType="textEmailAddress" />
+                android:hint="@string/hint_correo"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/generoEditTextR" />
+
+            <EditText
+                android:id="@+id/telefonoEditTextPhoneR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="@font/questrial"
+                android:hint="@string/hint_telefono"
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CorreoText" />
+
+            <EditText
+                android:id="@+id/municipioEditTextR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="@font/questrial"
+                android:hint="@string/hint_municipio"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/telefonoEditTextPhoneR" />
+
 
             <Button
                 android:id="@+id/btnRegistar2"

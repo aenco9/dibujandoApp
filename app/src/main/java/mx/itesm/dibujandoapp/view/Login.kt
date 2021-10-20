@@ -8,14 +8,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
+import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.LoginVM
+import mx.itesm.dibujandoapp.viewmodel.Usuario
+import kotlin.reflect.typeOf
 
 class Login : Fragment() {
 
@@ -27,6 +37,8 @@ class Login : Fragment() {
 
     private lateinit var binding: LoginFragmentBinding
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var baseDatos: FirebaseDatabase
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +47,13 @@ class Login : Fragment() {
         binding= LoginFragmentBinding.inflate(layoutInflater)
         val vista= binding.root
         return vista
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //Eventos
+        configurarEvento()
+        baseDatos = Firebase.database
     }
 
     private fun configurarEvento() {
@@ -67,16 +86,34 @@ class Login : Fragment() {
         if (requestCode == CODIGO_SIGNIN) {
             when (resultCode) {
                 RESULT_OK -> {
-                    val usuario = FirebaseAuth.getInstance().currentUser
+                    val usuarioGoogle = FirebaseAuth.getInstance().currentUser
                     FirebaseAuth.getInstance().currentUser
-                    println("Bienvenido: ${usuario?.displayName}")
-                    println("Correo: ${usuario?.email}")
-                    println("Token: ${usuario?.uid}")
+                    println("Bienvenido: ${usuarioGoogle?.displayName}")
+                    println("Correo: ${usuarioGoogle?.email}")
+                    println("Token: ${usuarioGoogle?.uid}")
                     if (destiny == 0) {
-                        val accion = LoginDirections.actionLogin2ToPerfilFragment()
-                        findNavController().navigate(accion)
+                        // Revisando si el usuario en efecto está registrado en nuestra base de datos.
+                        val myReference = baseDatos.getReference("Usuarios/")
+                        myReference.addValueEventListener(object: ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                if (snapshot.hasChild(usuarioGoogle?.uid.toString())) {
+                                    findNavController().navigate(LoginDirections.actionLogin2ToPerfilFragment())
+                                } else {
+                                    Toast.makeText(getActivity(), "No se ha registrado con" +
+                                            " esta cuenta de google, por favor regístrese.",
+                                        Toast.LENGTH_SHORT).show()
+                                }
+                            }
+
+                            override fun onCancelled(error: DatabaseError) {
+
+                            }
+                        })
                     } else if (destiny == 1) {
-                        val toFillInfo = LoginDirections.actionLogin2ToPantallaRegistro(FirebaseAuth.getInstance().currentUser?.email.toString())
+                        val toFillInfo = LoginDirections
+                            .actionLogin2ToPantallaRegistro(FirebaseAuth
+                                .getInstance()
+                                .currentUser?.email.toString())
                         findNavController().navigate(toFillInfo)
                     }
                 }
@@ -108,11 +145,6 @@ class Login : Fragment() {
         )
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        //Eventos
-        configurarEvento()
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -20,8 +20,8 @@
     <fragment
         android:id="@+id/registroExitoso"
         android:name="mx.itesm.dibujandoapp.view.RegistroExitoso"
-        android:label="registro_exitoso_fragment2"
-        tools:layout="@layout/registro_exitoso_fragment2" >
+        android:label="Registro exitoso"
+        tools:layout="@layout/registro_exitoso_fragment2">
         <action
             android:id="@+id/action_registroExitoso_to_login2"
             app:destination="@id/login2" />
