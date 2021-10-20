@@ -49,7 +49,7 @@
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_fecha_nacimiento"
-                android:inputType="date"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nombreText" />
