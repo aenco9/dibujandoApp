@@ -74,8 +74,17 @@ class Login : Fragment() {
         val usuario = mAuth.currentUser
         if (usuario != null) {
             // Lanzar actividad perfil
-            val accion = LoginDirections.actionLogin2ToPerfilFragment()
-            findNavController().navigate(accion)
+            val myReference = baseDatos.getReference("Usuarios/")
+            myReference.addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.hasChild(usuario?.uid.toString())) {
+                        findNavController().navigate(LoginDirections.actionLogin2ToPerfilFragment())
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
         } else {
             println("Hacer Login...")
         }
