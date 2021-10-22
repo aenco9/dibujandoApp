@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="#E0E1D3"
@@ -21,11 +22,12 @@
             android:paddingLeft="32dp"
             android:paddingTop="32dp"
             android:paddingRight="32dp"
-            android:text="TextView"
+            android:text="@string/content_textview"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/grey_content"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvDescripcion"
@@ -36,9 +38,10 @@
             android:paddingTop="32dp"
             android:paddingRight="32dp"
             android:paddingBottom="32dp"
-            android:text="TextView"
+            android:text="@string/content_textview"
             android:textColor="@color/grey_content"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView2"
@@ -48,11 +51,12 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:paddingBottom="8dp"
-            android:text="¡Selecciona para apoyar la causa!"
+            android:text="@string/content_textoRenglon"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/grey_content"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="TextContrastCheck" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

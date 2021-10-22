@@ -5,7 +5,6 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".view.PantallaRegistro">
 
     <ScrollView
@@ -15,13 +14,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="238dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/content_logo"
                 android:src="@drawable/logo_rectangulo_rojo" />
 
             <EditText
@@ -31,13 +31,17 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints="username"
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_nombre"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/FechaText"
@@ -49,10 +53,14 @@
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_fecha_nacimiento"
-                android:inputType="text"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombreText" />
+                app:layout_constraintTop_toBottomOf="@+id/nombreText"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/generoEditTextR"
@@ -64,7 +72,10 @@
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_genero"
-                android:inputType="textPersonName"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,11 +88,14 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints="emailAddress"
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_correo"
                 android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/generoEditTextR" />
@@ -93,13 +107,17 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints="phone"
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_telefono"
                 android:inputType="phone"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/CorreoText" />
+                app:layout_constraintTop_toBottomOf="@+id/CorreoText"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/municipioEditTextR"
@@ -111,7 +129,10 @@
                 android:ems="10"
                 android:fontFamily="@font/questrial"
                 android:hint="@string/hint_municipio"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/grey_main"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/telefonoEditTextPhoneR" />
@@ -123,13 +144,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10pt"
-                android:layout_marginTop="20pt"
+                android:layout_marginTop="10pt"
                 android:layout_marginEnd="10pt"
                 android:backgroundTint="#FF9800"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/questrial"
-                android:text="Crear nueva cuenta"
-                android:textColor="@color/white" />
+                android:text="@string/content_NuevaCuenta"
+                android:textColor="@color/white"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
     </ScrollView>

@@ -1,10 +1,12 @@
 package mx.itesm.dibujandoapp.donaciones
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -61,7 +63,7 @@ class DatosDonaciones : Fragment() {
                 binding.generoEditText.setText(usuarioFirebase?.genero)
                 binding.telefonoEditTextPhone.setText(usuarioFirebase?.telefono)
                 binding.municipioEditText.setText(usuarioFirebase?.municipio)
-                binding.fechaEditTextDate.setText(usuarioFirebase?.fecha)
+                binding.fechaEditText.setText(usuarioFirebase?.fecha)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -94,13 +96,22 @@ class DatosDonaciones : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun subscribeToDateChange() {
-        binding.fechaEditTextDate.setOnFocusChangeListener { _, hasFocus ->
+        binding.fechaEditText.addTextChangedListener {
+            if(binding.fechaEditText.text.toString().length == 2 ||
+                binding.fechaEditText.text.toString().length == 5){
+                binding.fechaEditText.setText(binding.fechaEditText.text.toString()+"/")
+                binding.fechaEditText.setSelection(binding.fechaEditText.text.toString().length)
+            }
+        }
+
+        binding.fechaEditText.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 // User is modifying the date.
             } else {
-                if (!viewModel.acceptableDate(binding.fechaEditTextDate.text.toString())) {
-                    binding.fechaEditTextDate.setText("")
+                if (!viewModel.acceptableDate(binding.fechaEditText.text.toString())) {
+                    binding.fechaEditText.setText("")
                     Toast.makeText(
                         activity, "Por favor escriba una fecha valida",
                         Toast.LENGTH_SHORT).show()
@@ -148,7 +159,7 @@ class DatosDonaciones : Fragment() {
 
         binding.donarDatosDonacionesBtn.setOnClickListener {
                     if (binding.nombreEditText.text.isEmpty() or
-                        binding.fechaEditTextDate.text.isEmpty() or
+                        binding.fechaEditText.text.isEmpty() or
                         binding.generoEditText.text.isEmpty() or
                         binding.correoEditTextEmail.text.isEmpty() or
                         binding.telefonoEditTextPhone.text.isEmpty() or

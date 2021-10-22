@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="125dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/content_logo"
             android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,12 +34,15 @@
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_nombre"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            tools:ignore="TextContrastCheck"
+            android:autofillHints="username" />
 
         <EditText
-            android:id="@+id/fechaEditTextDate"
+            android:id="@+id/fechaEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -47,10 +51,13 @@
             android:ems="10"
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_fecha_nacimiento"
-            android:inputType="date"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nombreEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/nombreEditText"
+            tools:ignore="TextContrastCheck" />
 
         <EditText
             android:id="@+id/generoEditText"
@@ -62,11 +69,13 @@
             android:ems="10"
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_genero"
-            android:inputType="textPersonName"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fechaEditTextDate" />
+            app:layout_constraintTop_toBottomOf="@+id/fechaEditText" />
 
         <EditText
             android:id="@+id/correoEditTextEmail"
@@ -79,9 +88,12 @@
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_correo"
             android:inputType="textEmailAddress"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/generoEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/generoEditText"
+            tools:ignore="TextContrastCheck"
+            android:autofillHints="emailAddress" />
 
         <EditText
             android:id="@+id/telefonoEditTextPhone"
@@ -94,9 +106,12 @@
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_telefono"
             android:inputType="phone"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/correoEditTextEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/correoEditTextEmail"
+            tools:ignore="TextContrastCheck"
+            android:autofillHints="phone" />
 
         <EditText
             android:id="@+id/municipioEditText"
@@ -109,9 +124,11 @@
             android:fontFamily="@font/questrial"
             android:hint="@string/hint_municipio"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/telefonoEditTextPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/telefonoEditTextPhone"
+            android:importantForAutofill="no" />
 
         <Switch
             android:id="@+id/deducibleSwitch"
@@ -119,10 +136,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/questrial"
+            android:minHeight="48dp"
             android:text="@string/hint_deducible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/municipioEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/municipioEditText"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Button
             android:id="@+id/donarDatosDonacionesBtn"
@@ -134,6 +153,7 @@
             android:text="@string/boton_donar_datos"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deducibleSwitch" />
+            app:layout_constraintTop_toBottomOf="@+id/deducibleSwitch"
+            tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

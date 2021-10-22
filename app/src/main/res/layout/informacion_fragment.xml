@@ -46,7 +46,7 @@
                 android:singleLine="true"
                 android:text="¡Somos Fundación Dibujando un Mañana!"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/grey_main"
                 android:textSize="39sp"
                 android:textStyle="bold" />
 

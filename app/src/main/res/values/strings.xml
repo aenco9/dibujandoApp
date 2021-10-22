@@ -64,5 +64,14 @@
     <string name="label_confirmation_paypal">Comprobante</string>
     <string name="confirmation_paypal">Felicidades, se ha realizado la donación. ¡Muchas gracias!</string>
     <string name="confirm_paypal_button">Entendido</string>
+    <string name="content_logo">Logo Fundacion Dibujando un Mañana</string>
+    <string name="content_textview">TextView</string>
+    <string name="content_JuntosOtraVez">Boton donacion Campaña Juntos Otra Vez</string>
+    <string name="content_EntreAmigos">Boton donar Campaña Entre Amigos</string>
+    <string name="content_LogOut">Cerrar sesión</string>
+    <string name="content_NuevaCuenta">Crear nueva cuenta</string>
+    <string name="content_textoRenglon">¡Selecciona para apoyar la causa!</string>
+    <string name="content_usuario">Usuario</string>
+    <string name="content_correo">Correo</string>
 
 </resources>

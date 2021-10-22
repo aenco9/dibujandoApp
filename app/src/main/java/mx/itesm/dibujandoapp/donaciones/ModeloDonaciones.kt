@@ -34,7 +34,7 @@ class ModeloDonaciones {
                 false
             }
         } else {
-            println("diagononales mal o simbolos extranos")
+            println("diagonales mal o simbolos extranos")
             return false
         }
     }

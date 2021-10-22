@@ -58,7 +58,8 @@
             android:typeface="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView5"
@@ -86,6 +87,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/white"
+            android:contentDescription="@string/content_JuntosOtraVez"
             android:scaleType="centerInside"
             android:src="@drawable/logo_juntos_otra_vez"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,6 +103,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/white"
+            android:contentDescription="@string/content_EntreAmigos"
             android:scaleType="centerInside"
             android:src="@drawable/logo_entre_amigos"
             app:layout_constraintEnd_toEndOf="parent"
@@ -271,7 +274,8 @@
             android:textSize="39sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            tools:ignore="RtlCompat" />
 
         <EditText
             android:id="@+id/montoPaypalEditTextDecimal"
@@ -283,7 +287,8 @@
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/payPalDonateOnceBtn"

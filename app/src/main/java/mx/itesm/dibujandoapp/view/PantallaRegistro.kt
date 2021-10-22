@@ -1,11 +1,13 @@
 package mx.itesm.dibujandoapp.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -48,6 +50,7 @@ class PantallaRegistro : Fragment() {
         binding.CorreoText.setText(args.correoGoogle)
         configurarEventos()
         subscribeToPhoneNumberChange()
+        subscribeToEmailChange()
         subscribeToDateChange()
         subscribeToGenderChange()
     }
@@ -104,7 +107,31 @@ class PantallaRegistro : Fragment() {
         }
     }
 
+    private fun subscribeToEmailChange() {
+        binding.CorreoText.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                // User is modifying the email.
+            } else {
+                if (!viewModel.acceptableEmail(binding.CorreoText.text.toString())) {
+                    binding.CorreoText.setText("")
+                    Toast.makeText(
+                        activity, "Por favor escriba un correo valido con @",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
     private fun subscribeToDateChange() {
+        binding.FechaText.addTextChangedListener {
+            if(binding.FechaText.text.toString().length == 2 ||
+                binding.FechaText.text.toString().length == 5){
+                binding.FechaText.setText(binding.FechaText.text.toString()+"/")
+                binding.FechaText.setSelection(binding.FechaText.text.toString().length)
+            }
+        }
+
         binding.FechaText.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 // User is modifying the date.

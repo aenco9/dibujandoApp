@@ -131,23 +131,23 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="login2">
+                  <entry key="login">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-50" />
-                            <option name="y" value="-143" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_login2_to_pantallaRegistro">
+                            <entry key="action_login_to_pantallaRegistro">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_login2_to_perfilFragment">
+                            <entry key="action_login_to_perfilFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -252,7 +252,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_registroExitoso_to_login2">
+                            <entry key="action_registroExitoso_to_login">
                               <value>
                                 <LayoutPositions />
                               </value>
