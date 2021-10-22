@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,15 +20,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.LoginVM
-import mx.itesm.dibujandoapp.viewmodel.Usuario
-import kotlin.reflect.typeOf
+
 
 class Login : Fragment() {
 
-    var destiny: Int = -1
+    private var destiny: Int = -1
+    var registrado: Boolean = false
 
     private val CODIGO_SIGNIN: Int = 500
 
@@ -43,50 +41,36 @@ class Login : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding= LoginFragmentBinding.inflate(layoutInflater)
-        val vista= binding.root
-        return vista
+    ): View {
+        binding = LoginFragmentBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
-        configurarEvento()
         baseDatos = Firebase.database
+        revisarFirebase()
+
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            println("Si hay usuario")
+            // Lanzar actividad perfil
+            irALogin()
+        } else {
+            println("Hacer Login...")
+        }
+
+        configurarEvento()
     }
 
     private fun configurarEvento() {
-        binding.btnRegistrar2.setOnClickListener {
-            autenticar() // boton de arriba
-            // Lanzar actividad perfil
-            // Validar que perfil esta creado en la base de datos.
+        binding.btnLogIn.setOnClickListener {
             destiny = 0
+            autenticar()
         }
         binding.btnRegistar.setOnClickListener {
-            autenticar()
             destiny = 1
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val usuario = mAuth.currentUser
-        if (usuario != null) {
-            // Lanzar actividad perfil
-            val myReference = baseDatos.getReference("Usuarios/")
-            myReference.addValueEventListener(object: ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.hasChild(usuario?.uid.toString())) {
-                        findNavController().navigate(LoginDirections.actionLogin2ToPerfilFragment())
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                }
-            })
-        } else {
-            println("Hacer Login...")
+            autenticar()
         }
     }
 
@@ -95,34 +79,23 @@ class Login : Fragment() {
         if (requestCode == CODIGO_SIGNIN) {
             when (resultCode) {
                 RESULT_OK -> {
-                    val usuarioGoogle = FirebaseAuth.getInstance().currentUser
-                    FirebaseAuth.getInstance().currentUser
-                    println("Bienvenido: ${usuarioGoogle?.displayName}")
-                    println("Correo: ${usuarioGoogle?.email}")
-                    println("Token: ${usuarioGoogle?.uid}")
+                    //revisarFirebase()
+
                     if (destiny == 0) {
-                        // Revisando si el usuario en efecto está registrado en nuestra base de datos.
-                        val myReference = baseDatos.getReference("Usuarios/")
-                        myReference.addValueEventListener(object: ValueEventListener {
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                if (snapshot.hasChild(usuarioGoogle?.uid.toString())) {
-                                    findNavController().navigate(LoginDirections.actionLogin2ToPerfilFragment())
-                                } else {
-                                    Toast.makeText(getActivity(), "No se ha registrado con" +
-                                            " esta cuenta de google, por favor regístrese.",
-                                        Toast.LENGTH_SHORT).show()
-                                }
-                            }
+                        println("HACER LOGIN")
+                        val usuarioGoogle = FirebaseAuth.getInstance().currentUser
+                        println("Bienvenido: ${usuarioGoogle?.displayName}")
+                        println("Correo: ${usuarioGoogle?.email}")
+                        println("Token: ${usuarioGoogle?.uid}")
 
-                            override fun onCancelled(error: DatabaseError) {
+                        irALogin()
 
-                            }
-                        })
                     } else if (destiny == 1) {
-                        val toFillInfo = LoginDirections
-                            .actionLogin2ToPantallaRegistro(FirebaseAuth
+                        println("HACER REGISTRO")
+                        val toFillInfo = LoginDirections.actionLoginToPantallaRegistro(FirebaseAuth
                                 .getInstance()
                                 .currentUser?.email.toString())
+                        destiny = -1
                         findNavController().navigate(toFillInfo)
                     }
                 }
@@ -154,6 +127,38 @@ class Login : Fragment() {
         )
     }
 
+    private fun revisarFirebase() {
+        val usuario = mAuth.currentUser
+        val myReference = baseDatos.getReference("Usuarios/")
+        myReference.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (usuario != null) {
+                    if (snapshot.hasChild(usuario.uid)) {
+                        println("Moviendose a Perfil desde Login...")
+                        registrado = true
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+    }
+
+    private fun irALogin(){
+        println("Ir a login...")
+        println(registrado)
+        if(registrado){
+            destiny = -1
+            findNavController().navigate(LoginDirections.actionLoginToPerfilFragment())
+        }
+        else {
+            Toast.makeText(
+                activity, "No se ha registrado con" +
+                        " esta cuenta de google, por favor regístrese.",
+                Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

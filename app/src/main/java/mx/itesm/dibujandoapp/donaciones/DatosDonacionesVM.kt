@@ -1,6 +1,5 @@
 package mx.itesm.dibujandoapp.donaciones
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 /**
@@ -13,18 +12,18 @@ import androidx.lifecycle.ViewModel
 class DatosDonacionesVM: ViewModel() {
     private val modeloDonaciones: ModeloDonaciones = ModeloDonaciones()
 
-    public fun acceptableGender(gender: String): Boolean {
+    fun acceptableGender(gender: String): Boolean {
         return modeloDonaciones.acceptableGender(gender)
     }
 
-    public fun acceptableEmail(email: String): Boolean {
+    fun acceptableEmail(email: String): Boolean {
         return modeloDonaciones.acceptableEmail(email)
     }
 
-    public fun acceptableDate(date: String): Boolean {
+    fun acceptableDate(date: String): Boolean {
         return modeloDonaciones.acceptableDate(date)//poner funcion en modelo
     }
-    public fun acceptablePhoneNumber(phoneNumber: String): Boolean {
+    fun acceptablePhoneNumber(phoneNumber: String): Boolean {
         return modeloDonaciones.acceptablePhoneNumber(phoneNumber)
     }
 }

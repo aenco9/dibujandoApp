@@ -23,8 +23,8 @@
         android:label="Registro exitoso"
         tools:layout="@layout/registro_exitoso_fragment2">
         <action
-            android:id="@+id/action_registroExitoso_to_login2"
-            app:destination="@id/login2" />
+            android:id="@+id/action_registroExitoso_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/causasFrag"
@@ -85,7 +85,7 @@
     </fragment>
     <fragment
         android:id="@+id/datos_causa"
-        android:name="mx.itesm.dibujandoapp.datos_causa"
+        android:name="mx.itesm.dibujandoapp.DatosCausa"
         android:label="Datos de Causa"
         tools:layout="@layout/datos_causa_fragment">
         <action
@@ -117,15 +117,15 @@
             app:destination="@id/informacion_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/login2"
+        android:id="@+id/login"
         android:name="mx.itesm.dibujandoapp.view.Login"
         android:label="Login"
         tools:layout="@layout/login_fragment">
         <action
-            android:id="@+id/action_login2_to_perfilFragment"
+            android:id="@+id/action_login_to_perfilFragment"
             app:destination="@id/perfilFragment" />
         <action
-            android:id="@+id/action_login2_to_pantallaRegistro"
+            android:id="@+id/action_login_to_pantallaRegistro"
             app:destination="@id/pantallaRegistro" />
     </fragment>
 </navigation>

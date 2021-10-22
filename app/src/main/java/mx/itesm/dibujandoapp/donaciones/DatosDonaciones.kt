@@ -1,9 +1,6 @@
 package mx.itesm.dibujandoapp.donaciones
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,9 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentDatosDonacionesBinding
-import mx.itesm.dibujandoapp.view.LoginDirections
 import mx.itesm.dibujandoapp.viewmodel.Usuario
 
 /**
@@ -60,7 +55,7 @@ class DatosDonaciones : Fragment() {
             val myReference = baseDatos.getReference("Usuarios/")
             myReference.addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                val usuarioFirebase = snapshot.child(usuario?.uid.toString()).getValue(Usuario::class.java)
+                val usuarioFirebase = snapshot.child(usuario.uid).getValue(Usuario::class.java)
                 binding.nombreEditText.setText(usuario.displayName)
                 binding.correoEditTextEmail.setText(usuario.email)
                 binding.generoEditText.setText(usuarioFirebase?.genero)
@@ -90,7 +85,8 @@ class DatosDonaciones : Fragment() {
                         .text
                         .toString())) {
                     binding.telefonoEditTextPhone.setText("")
-                    Toast.makeText(getActivity(), "Por favor escriba un " +
+                    Toast.makeText(
+                        activity, "Por favor escriba un " +
                             "número de teléfono con lada",
                         Toast.LENGTH_SHORT).show()
                 }
@@ -105,7 +101,8 @@ class DatosDonaciones : Fragment() {
             } else {
                 if (!viewModel.acceptableDate(binding.fechaEditTextDate.text.toString())) {
                     binding.fechaEditTextDate.setText("")
-                    Toast.makeText(getActivity(), "Por favor escriba una fecha valida",
+                    Toast.makeText(
+                        activity, "Por favor escriba una fecha valida",
                         Toast.LENGTH_SHORT).show()
                 }
             }
@@ -119,7 +116,8 @@ class DatosDonaciones : Fragment() {
             } else {
                 if (!viewModel.acceptableEmail(binding.correoEditTextEmail.text.toString())) {
                     binding.correoEditTextEmail.setText("")
-                    Toast.makeText(getActivity(), "Por favor escriba un correo valido con @",
+                    Toast.makeText(
+                        activity, "Por favor escriba un correo valido con @",
                         Toast.LENGTH_SHORT).show()
                 }
             }
@@ -133,7 +131,8 @@ class DatosDonaciones : Fragment() {
             } else {
                 if (!viewModel.acceptableGender(binding.generoEditText.text.toString())) {
                     binding.generoEditText.setText("")
-                    Toast.makeText(getActivity(), "Por favor escriba M para masculino" +
+                    Toast.makeText(
+                        activity, "Por favor escriba M para masculino" +
                             " o F para femenino",
                         Toast.LENGTH_SHORT).show()
                 }
@@ -154,7 +153,8 @@ class DatosDonaciones : Fragment() {
                         binding.correoEditTextEmail.text.isEmpty() or
                         binding.telefonoEditTextPhone.text.isEmpty() or
                         binding.municipioEditText.text.isEmpty()) {
-                        Toast.makeText(getActivity(), "Por favor llene todos los campos de manera " +
+                        Toast.makeText(
+                            activity, "Por favor llene todos los campos de manera " +
                                 "correcta.",
                             Toast.LENGTH_LONG).show()
                     } else {
@@ -164,8 +164,9 @@ class DatosDonaciones : Fragment() {
                     }
         }
         binding.deducibleSwitch.setOnClickListener {
-            if (binding.deducibleSwitch.isChecked()) {
-                Toast.makeText(getActivity(), "Por favor remita sus datos fiscales al " +
+            if (binding.deducibleSwitch.isChecked) {
+                Toast.makeText(
+                    activity, "Por favor remita sus datos fiscales al " +
                         "correo entreamigos@dibujando.org.mx adjuntando el comprobante.",
                     Toast.LENGTH_SHORT).show()
             }

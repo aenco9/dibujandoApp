@@ -1,10 +1,13 @@
 package mx.itesm.dibujandoapp.donaciones
 
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,9 +22,6 @@ import com.paypal.checkout.order.Amount
 import com.paypal.checkout.order.AppContext
 import com.paypal.checkout.order.Order
 import com.paypal.checkout.order.PurchaseUnit
-import com.paypal.checkout.paymentbutton.PayPalButton
-import mx.itesm.dibujandoapp.R
-import mx.itesm.dibujandoapp.databinding.FragmentDonacionesBinding
 import mx.itesm.dibujandoapp.databinding.FragmentPaypalDonationBinding
 
 /**
@@ -36,10 +36,11 @@ class PaypalDonation: Fragment() {
     private lateinit var binding: FragmentPaypalDonationBinding
     private val args: PaypalDonationArgs by navArgs()
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // The binding contains the view that this onCreateView function returns.
         binding = FragmentPaypalDonationBinding.inflate(layoutInflater)
         val payPalButton = binding.actualPayPalButton
@@ -66,7 +67,7 @@ class PaypalDonation: Fragment() {
                 createOrderActions.create(order)
             },
             onApprove = OnApprove { approval ->
-                approval.orderActions.capture { captureOrderResult ->
+                approval.orderActions.capture {
                     val actionToConfirm = PaypalDonationDirections
                         .actionPaypalDonationToPayPalConfirmation()
                     findNavController().navigate(actionToConfirm)
@@ -92,6 +93,7 @@ class PaypalDonation: Fragment() {
         showAmount()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showAmount() {
         binding.showAmountTextView.text = "Usted va a donar: $ ${args.monto} MXN a ${args.titulo}"
     }

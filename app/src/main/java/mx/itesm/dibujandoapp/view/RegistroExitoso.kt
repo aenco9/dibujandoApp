@@ -7,36 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.RegistroExitosoFragment2Binding
 
 import mx.itesm.dibujandoapp.viewmodel.RegistroExitosoVM
 
 class RegistroExitoso : Fragment() {
 
-    companion object {
-        fun newInstance() = RegistroExitoso()
-    }
-
-    private lateinit var viewModel: RegistroExitosoVM
-
+    lateinit var viewModel: RegistroExitosoVM
     private lateinit var binding: RegistroExitosoFragment2Binding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding= RegistroExitosoFragment2Binding.inflate(layoutInflater)
-        val vista= binding.root
-        return vista
+    ): View {
+        binding = RegistroExitosoFragment2Binding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Eventos
         binding.btnEntendido.setOnClickListener {
-            findNavController().navigate(RegistroExitosoDirections.actionRegistroExitosoToLogin2())
+            findNavController().navigate(RegistroExitosoDirections.actionRegistroExitosoToLogin())
         }
 
     }
@@ -44,7 +37,6 @@ class RegistroExitoso : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(RegistroExitosoVM::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

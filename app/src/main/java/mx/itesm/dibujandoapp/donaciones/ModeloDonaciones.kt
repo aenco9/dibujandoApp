@@ -1,9 +1,5 @@
 package mx.itesm.dibujandoapp.donaciones
 
-import android.widget.Toast
-import com.google.android.material.internal.ContextUtils.getActivity
-import java.text.NumberFormat
-
 /**
  * Autor:
  * Luis Ignacio Ferro Salinas
@@ -12,20 +8,20 @@ import java.text.NumberFormat
  */
 
 class ModeloDonaciones {
-    public fun acceptableGender(gender: String): Boolean {
+    fun acceptableGender(gender: String): Boolean {
         return gender == "M" || gender == "F" || gender == "m" || gender == "f"
     }
-    public fun acceptableEmail(email: String): Boolean {
+    fun acceptableEmail(email: String): Boolean {
         return "@" in email && "." in email
     }
-    public fun acceptableDate(date: String): Boolean {
-        var numeroDiagonales = date.count{ "/".contains(it) }
+    fun acceptableDate(date: String): Boolean {
+        val numeroDiagonales = date.count{ "/".contains(it) }
         if (numeroDiagonales == 2 && ("." !in date) and ("-" !in date)) {
             return try {
-                var listaNumeros = date.split("/")
-                var day = listaNumeros[0].toInt()
-                var month = listaNumeros[1].toInt()
-                var year = listaNumeros[2].toInt()
+                val listaNumeros = date.split("/")
+                val day = listaNumeros[0].toInt()
+                val month = listaNumeros[1].toInt()
+                val year = listaNumeros[2].toInt()
                 println(" dia $day mes $month ano $year \n")
                 (day > 0) and
                         (day < 32) and
@@ -43,12 +39,12 @@ class ModeloDonaciones {
         }
     }
 
-    public fun acceptablePhoneNumber(phoneNumber: String): Boolean {
-        try {
+    fun acceptablePhoneNumber(phoneNumber: String): Boolean {
+        return try {
             val stripped = phoneNumber.replace(" ", "")
-            return stripped.matches("[0-9]+".toRegex()) and (stripped.length==10)
+            stripped.matches("[0-9]+".toRegex()) and (stripped.length==10)
         } catch(e: java.lang.NumberFormatException) {
-            return false
+            false
         }
     }
 }

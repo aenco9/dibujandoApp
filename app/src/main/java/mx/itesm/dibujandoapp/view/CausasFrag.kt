@@ -8,16 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentCausasFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.CausasVM
-import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
 
 class CausasFrag : Fragment(), RenglonListener {
 
     private val viewModel: CausasVM by viewModels()
     private lateinit var binding: FragmentCausasFragmentBinding
-    val adaptador = AdaptadorListaProyectos(arrayListOf())
+    private val adaptador = AdaptadorListaProyectos(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,7 +56,7 @@ class CausasFrag : Fragment(), RenglonListener {
 
     override fun clickEnRenglon(posicion: Int) {
         val proyecto = adaptador.arrCausas[posicion]
-        println("Seleccion en proyecto ${proyecto}")
+        println("Seleccion en proyecto $proyecto")
         val titulo = proyecto.Titulo
         val descripcion = proyecto.Descripcion
         val accion = CausasFragDirections.actionCausasFragToDatosCausa2(titulo, descripcion)

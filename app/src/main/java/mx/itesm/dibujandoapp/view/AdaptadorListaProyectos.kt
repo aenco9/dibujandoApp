@@ -1,5 +1,6 @@
 package mx.itesm.dibujandoapp.view
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,7 @@ class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
         return arrCausas.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun actualizar(lista: List<Proyecto>?){
         arrCausas.clear()       // Liberar la memoria
         if(lista != null){

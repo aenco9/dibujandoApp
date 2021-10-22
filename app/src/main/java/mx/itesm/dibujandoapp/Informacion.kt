@@ -1,6 +1,5 @@
 package mx.itesm.dibujandoapp
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +9,12 @@ import mx.itesm.dibujandoapp.databinding.InformacionFragmentBinding
 
 class Informacion : Fragment() {
 
-    private lateinit var viewModel: InformacionVM
     private lateinit var binding: InformacionFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = InformacionFragmentBinding.inflate(layoutInflater)
         return binding.root
     }

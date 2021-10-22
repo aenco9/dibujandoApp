@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import mx.itesm.dibujandoapp.R
 import mx.itesm.dibujandoapp.databinding.FragmentDonacionesBinding
 
 /**
@@ -62,24 +61,29 @@ class FragmentDonaciones : Fragment() {
         }
 
         binding.payPalDonateOnceBtn.setOnClickListener {
-            if (binding.montoPaypalEditTextDecimal.text.isEmpty()) {
-                Toast.makeText(getActivity(), "Por favor llene el campo " +
-                        "del Monto antes de continuar.",
-                    Toast.LENGTH_LONG).show()
-            } else if (binding.montoPaypalEditTextDecimal.text.toString().toFloat() >= 9999999.99) {
-                binding.montoPaypalEditTextDecimal.setText("")
-                Toast.makeText(
-                    getActivity(), "Por favor introduzca un monto" +
-                            " menor a 9999999.99",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                val actionWithAmount = FragmentDonacionesDirections
-                    .actionFragmentDonacionesToDatosDonaciones(binding.montoPaypalEditTextDecimal
-                        .text
-                        .toString()
-                        .toFloat())
-                findNavController().navigate(actionWithAmount)
+            when {
+                binding.montoPaypalEditTextDecimal.text.isEmpty() -> {
+                    Toast.makeText(
+                        activity, "Por favor llene el campo " +
+                                "del Monto antes de continuar.",
+                        Toast.LENGTH_LONG).show()
+                }
+                binding.montoPaypalEditTextDecimal.text.toString().toFloat() >= 9999999.99 -> {
+                    binding.montoPaypalEditTextDecimal.setText("")
+                    Toast.makeText(
+                        activity, "Por favor introduzca un monto" +
+                                " menor a 9999999.99",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                else -> {
+                    val actionWithAmount = FragmentDonacionesDirections
+                        .actionFragmentDonacionesToDatosDonaciones(binding.montoPaypalEditTextDecimal
+                            .text
+                            .toString()
+                            .toFloat())
+                    findNavController().navigate(actionWithAmount)
+                }
             }
         }
     }

@@ -1,6 +1,5 @@
 package mx.itesm.dibujandoapp
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +13,6 @@ import mx.itesm.dibujandoapp.databinding.PerfilFragmentBinding
 
 class PerfilFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PerfilFragment()
-    }
-
-    private lateinit var viewModel: PerfilVM
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var binding: PerfilFragmentBinding
     private val usuario = mAuth.currentUser
@@ -26,8 +20,9 @@ class PerfilFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         if (usuario != null) {
-            println("Bienvenido NUEVAMENTE: ${usuario.displayName}")
-            println("Correo: ${usuario.email}")
+            val usuarioGoogle = FirebaseAuth.getInstance().currentUser
+            println("Bienvenido NUEVAMENTE: ${usuarioGoogle?.displayName}")
+            println("Correo: ${usuarioGoogle?.email}")
         } else {
             // Hacer Login
             val accion = PerfilFragmentDirections.actionPerfilFragmentToInformacionFragment()
@@ -38,7 +33,7 @@ class PerfilFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = PerfilFragmentBinding.inflate(layoutInflater)
         return (binding.root)
     }
@@ -58,7 +53,8 @@ class PerfilFragment : Fragment() {
         binding.btnLogOut.setOnClickListener {
             AuthUI.getInstance().signOut(requireContext())
             print("Log Out Exitoso")
-            Toast.makeText(getActivity(), "Sesión cerrada exitosamente",
+            Toast.makeText(
+                activity, "Sesión cerrada exitosamente",
                 Toast.LENGTH_SHORT).show()
 
             // Regresar a la pantalla principal
