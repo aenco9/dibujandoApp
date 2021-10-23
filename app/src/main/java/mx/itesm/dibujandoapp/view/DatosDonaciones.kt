@@ -1,4 +1,4 @@
-package mx.itesm.dibujandoapp.donaciones
+package mx.itesm.dibujandoapp.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -19,7 +19,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.databinding.FragmentDatosDonacionesBinding
-import mx.itesm.dibujandoapp.viewmodel.Usuario
+import mx.itesm.dibujandoapp.viewmodel.DatosDonacionesVM
+import mx.itesm.dibujandoapp.model.Usuario
 
 /**
  *

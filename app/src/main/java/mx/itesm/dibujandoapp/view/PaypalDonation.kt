@@ -1,4 +1,4 @@
-package mx.itesm.dibujandoapp.donaciones
+package mx.itesm.dibujandoapp.view
 
 import android.annotation.SuppressLint
 import android.os.Build

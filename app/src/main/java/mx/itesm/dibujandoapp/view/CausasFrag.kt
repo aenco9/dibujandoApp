@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import mx.itesm.dibujandoapp.databinding.FragmentCausasFragmentBinding
+import mx.itesm.dibujandoapp.model.RenglonListener
 import mx.itesm.dibujandoapp.viewmodel.CausasVM
 
 /**

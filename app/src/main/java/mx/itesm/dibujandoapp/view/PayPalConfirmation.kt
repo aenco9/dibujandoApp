@@ -1,4 +1,4 @@
-package mx.itesm.dibujandoapp.donaciones
+package mx.itesm.dibujandoapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,7 +17,7 @@ import mx.itesm.dibujandoapp.databinding.FragmentPayPalConfirmationBinding
  * 18 de octubre de 2021
  *
  * Descripción:
- * PayPalConfirmation es el componente fragment_pay_pal_confirmation,
+ * PayPalConfirmation es el componente View de fragment_pay_pal_confirmation,
  * aqui se revisa la interacción del usuario con el botón de la
  * interfaz.
  *

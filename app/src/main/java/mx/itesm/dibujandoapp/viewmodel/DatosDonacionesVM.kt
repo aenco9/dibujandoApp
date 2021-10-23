@@ -1,6 +1,7 @@
-package mx.itesm.dibujandoapp.donaciones
+package mx.itesm.dibujandoapp.viewmodel
 
 import androidx.lifecycle.ViewModel
+import mx.itesm.dibujandoapp.model.ModeloDonaciones
 
 /**
  *

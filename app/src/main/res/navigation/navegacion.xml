@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentDonaciones"
-        android:name="mx.itesm.dibujandoapp.donaciones.FragmentDonaciones"
+        android:name="mx.itesm.dibujandoapp.view.FragmentDonaciones"
         android:label="@string/donaciones"
         tools:layout="@layout/fragment_donaciones" >
         <action
@@ -49,12 +49,12 @@
     </fragment>
     <fragment
         android:id="@+id/informacion_fragment"
-        android:name="mx.itesm.dibujandoapp.Informacion"
+        android:name="mx.itesm.dibujandoapp.view.Informacion"
         android:label="@string/quienes_somos"
         tools:layout="@layout/informacion_fragment" />
     <fragment
         android:id="@+id/datosDonaciones"
-        android:name="mx.itesm.dibujandoapp.donaciones.DatosDonaciones"
+        android:name="mx.itesm.dibujandoapp.view.DatosDonaciones"
         android:label="@string/label_datos_donacion"
         tools:layout="@layout/fragment_datos_donaciones">
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/paypalDonation"
-        android:name="mx.itesm.dibujandoapp.donaciones.PaypalDonation"
+        android:name="mx.itesm.dibujandoapp.view.PaypalDonation"
         android:label="@string/label_paypal_donation">
         <argument
             android:name="monto"
@@ -85,7 +85,7 @@
     </fragment>
     <fragment
         android:id="@+id/datos_causa"
-        android:name="mx.itesm.dibujandoapp.DatosCausa"
+        android:name="mx.itesm.dibujandoapp.view.DatosCausa"
         android:label="Datos de Causa"
         tools:layout="@layout/datos_causa_fragment">
         <action
@@ -101,7 +101,7 @@
     </fragment>
     <fragment
         android:id="@+id/payPalConfirmation"
-        android:name="mx.itesm.dibujandoapp.donaciones.PayPalConfirmation"
+        android:name="mx.itesm.dibujandoapp.view.PayPalConfirmation"
         android:label="@string/label_confirmation_paypal" >
         <action
             android:id="@+id/action_payPalConfirmation_to_fragmentDonaciones"
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
-        android:name="mx.itesm.dibujandoapp.PerfilFragment"
+        android:name="mx.itesm.dibujandoapp.view.PerfilFragment"
         android:label="Perfil"
         tools:layout="@layout/perfil_fragment">
         <action

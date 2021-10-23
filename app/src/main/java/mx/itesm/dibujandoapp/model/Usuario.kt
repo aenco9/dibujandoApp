@@ -1,4 +1,4 @@
-package mx.itesm.dibujandoapp.viewmodel
+package mx.itesm.dibujandoapp.model
 
 /**
  *

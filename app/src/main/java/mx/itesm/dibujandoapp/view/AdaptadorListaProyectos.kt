@@ -8,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mx.itesm.dibujandoapp.R
+import mx.itesm.dibujandoapp.model.Proyecto
+import mx.itesm.dibujandoapp.model.RenglonListener
 import java.sql.DriverManager.println
 import java.util.*
 

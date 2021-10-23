@@ -1,4 +1,4 @@
-package mx.itesm.dibujandoapp.donaciones
+package mx.itesm.dibujandoapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

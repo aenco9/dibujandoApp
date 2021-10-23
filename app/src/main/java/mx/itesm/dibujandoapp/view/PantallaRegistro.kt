@@ -17,7 +17,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.databinding.PantallaRegistroFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
-import mx.itesm.dibujandoapp.viewmodel.Usuario
+import mx.itesm.dibujandoapp.model.Usuario
 
 /**
  *
