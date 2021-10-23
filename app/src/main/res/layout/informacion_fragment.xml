@@ -29,7 +29,9 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="48dp"
-                android:src="@drawable/corazon" />
+                android:contentDescription="@string/content_logoSecundario"
+                android:src="@drawable/corazon"
+                tools:ignore="ImageContrastCheck" />
 
             <EditText
                 android:id="@+id/subtitulo"
@@ -41,10 +43,11 @@
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/playfair_display_bold"
+                android:importantForAutofill="no"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
-                android:text="¡Somos Fundación Dibujando un Mañana!"
+                android:text="@string/titulo_Informacion"
                 android:textAlignment="center"
                 android:textColor="@color/grey_main"
                 android:textSize="39sp"
@@ -56,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Nos dedicamos a impulsar el desarrollo social de niños y adolescentes en situación del vulnerabilidad en México y América Central con un modelo de inversión social que entrelaza la voluntad de ayudar de diversos actores y la transforma en programas sociales basados en los derechos humanos que generan impactos positivos a largo plazo."
+                android:text="@string/content_quienesSomos"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -69,6 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:contentDescription="@string/content_Imagen1"
                     android:src="@drawable/infantes" />
 
                 <ImageView
@@ -76,6 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:contentDescription="@string/content_logo"
                     android:scaleType="fitCenter"
                     android:scaleX=".7"
                     android:scaleY=".7"
@@ -90,6 +95,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="48dp"
                 android:background="#4A4A4A"
+                android:contentDescription="@string/content_logoSecundario"
                 android:src="@drawable/corazon" />
 
             <EditText
@@ -100,17 +106,19 @@
                 android:background="#535050"
                 android:backgroundTint="#4A4A4A"
                 android:clickable="false"
+                android:editable="false"
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/playfair_display_bold"
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
-                android:text="No hay barreras imposibles cuando existe la voluntad de ayudar y alguien que sabe hacerlo"
+                android:text="@string/content_informacion2"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="39sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:importantForAutofill="no" />
 
             <ImageView
                 android:id="@+id/corazon3"
@@ -119,6 +127,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="48dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/content_logoSecundario"
                 android:src="@drawable/corazon" />
 
             <EditText
@@ -135,12 +144,13 @@
                 android:inputType="textMultiLine|textPersonName"
                 android:nestedScrollingEnabled="false"
                 android:singleLine="true"
-                android:text="Nuestra Historia"
+                android:text="@string/titulo_nuestraHistoria"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="39sp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/informacion"
@@ -148,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="En octubre de 1997 nació Fundación Dibujando un Mañana, A.C. con el objetivo de invertir en instituciones que atienden a niños y adolescentes.\n\nHemos vivido muchos acontecimientos en 20 años, con siete presidentes, 40 miembros del Consejo Directivo, diferentes asesores en ocho Comités de trabajo y el Equipo Operativo. \n\nEstamos convencidos de que la ruta es generar alianzas para crear condiciones idóneas que favorezcan la vida digna de todas las personas en nuestro país y la región."
+                android:text="@string/content_informacion"
                 android:textSize="18sp" />
 
             <ImageView
@@ -158,6 +168,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="48dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/content_logoSecundario"
                 android:src="@drawable/corazon" />
 
             <EditText
@@ -168,6 +179,7 @@
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
                 android:clickable="false"
+                android:editable="false"
                 android:ems="10"
                 android:enabled="false"
                 android:fontFamily="@font/playfair_display_bold"
@@ -175,12 +187,13 @@
                 android:nestedScrollingEnabled="false"
                 android:paddingBottom="16dp"
                 android:singleLine="false"
-                android:text="Nuestra plataforma estratégica"
+                android:text="@string/content_informacion3"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="39sp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName6"
@@ -192,9 +205,10 @@
                 android:fontFamily="@font/questrial"
                 android:gravity="center"
                 android:inputType="textPersonName"
-                android:text="Principios"
+                android:text="@string/content_principios"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName7"
@@ -206,9 +220,10 @@
                 android:fontFamily="@font/questrial"
                 android:gravity="center"
                 android:inputType="textPersonName"
-                android:text="Propositos"
+                android:text="@string/content_propositos"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName8"
@@ -219,9 +234,10 @@
                 android:enabled="false"
                 android:gravity="center"
                 android:inputType="textPersonName"
-                android:text="Virtudes"
+                android:text="@string/content_virtudes"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:importantForAutofill="no" />
 
         </LinearLayout>
     </ScrollView>

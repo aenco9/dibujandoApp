@@ -20,20 +20,28 @@ import mx.itesm.dibujandoapp.viewmodel.PantallaRegistroVM
 import mx.itesm.dibujandoapp.viewmodel.Usuario
 
 /**
+ *
  * Autores:
  * Luis Ignacio Ferro Salinas
+ * Joan Daniel Guerrero García
+ *
  * Última modificación:
- * 19 de octubre de 2021
- */
+ * 22 de octubre de 2021
+ *
+ * Descripción:
+ * PantallaRegistro es el componente View de pantalla_registro_fragment,
+ * aqui se verifican los datos que se ingresen del usuario y actualiza
+ * la base de datos con la información del usuario.
+ *
+ * */
 
 class PantallaRegistro : Fragment() {
 
-    private val viewModel: PantallaRegistroVM by viewModels()
+    private val mAuth = FirebaseAuth.getInstance()
     private val args: PantallaRegistroArgs by navArgs()
+    private val viewModel: PantallaRegistroVM by viewModels()
     private lateinit var binding: PantallaRegistroFragmentBinding
     private lateinit var baseDatos: FirebaseDatabase
-    private val mAuth = FirebaseAuth.getInstance()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +53,8 @@ class PantallaRegistro : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Eventos
+
+        // Se revisan los eventos...
         baseDatos = Firebase.database
         binding.CorreoText.setText(args.correoGoogle)
         configurarEventos()
@@ -56,7 +65,7 @@ class PantallaRegistro : Fragment() {
     }
 
     private fun configurarEventos() {
-
+        // Se verifica que todos los campos han sido llenados para registrarlo en FireBase
         binding.btnRegistar2.setOnClickListener {
             if (binding.nombreText.text.isEmpty() or
                 binding.FechaText.text.isEmpty() or
@@ -90,9 +99,8 @@ class PantallaRegistro : Fragment() {
 
     private fun subscribeToPhoneNumberChange() {
         binding.telefonoEditTextPhoneR.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the phone number.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptablePhoneNumber(binding
                         .telefonoEditTextPhoneR
                         .text
@@ -109,9 +117,8 @@ class PantallaRegistro : Fragment() {
 
     private fun subscribeToEmailChange() {
         binding.CorreoText.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the email.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableEmail(binding.CorreoText.text.toString())) {
                     binding.CorreoText.setText("")
                     Toast.makeText(
@@ -124,6 +131,7 @@ class PantallaRegistro : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun subscribeToDateChange() {
+        // Se añaden las diagonales automáticamente al escribir la fecha
         binding.FechaText.addTextChangedListener {
             if(binding.FechaText.text.toString().length == 2 ||
                 binding.FechaText.text.toString().length == 5){
@@ -133,9 +141,8 @@ class PantallaRegistro : Fragment() {
         }
 
         binding.FechaText.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the date.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableDate(binding.FechaText.text.toString())) {
                     binding.FechaText.setText("")
                     Toast.makeText(
@@ -149,9 +156,8 @@ class PantallaRegistro : Fragment() {
 
     private fun subscribeToGenderChange() {
         binding.generoEditTextR.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the gender.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableGender(binding.generoEditTextR.text.toString())) {
                     binding.generoEditTextR.setText("")
                     Toast.makeText(

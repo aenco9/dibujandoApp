@@ -12,6 +12,20 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import mx.itesm.dibujandoapp.databinding.ActivityPrincipalBinding
 
+/**
+ *
+ * Autor:
+ * Luis Ignacio Ferro Salinas
+ *
+ * Última modificación:
+ * 19 de octubre de 2021
+ *
+ * Descripción:
+ * PrincipalActivity es el componente View de activity_principal,
+ * aqui se configura la barra lateral y se muestra el primer fragmento de navegacion.
+ *
+ * */
+
 class PrincipalActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -28,8 +42,8 @@ class PrincipalActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_principal)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        // Se pasa cada id del menu como un set de IDs porque cada
+        // item debe ser considerado como el nivel prioritario de destinos.
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.informacion_fragment, R.id.fragmentDonaciones, R.id.login, R.id.causasFrag
@@ -40,7 +54,7 @@ class PrincipalActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Realiza el inflate en el menu; esto añade los items a la barra si esta existe.
         menuInflater.inflate(R.menu.principal, menu)
         return true
     }

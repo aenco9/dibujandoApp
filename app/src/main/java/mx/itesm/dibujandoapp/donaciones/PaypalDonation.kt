@@ -27,29 +27,48 @@ import mx.itesm.dibujandoapp.databinding.FragmentPaypalDonationBinding
 /**
  * Autor:
  * Luis Ignacio Ferro Salinas
+ *
  * Última fecha de moficación:
  * 14 de octubre de 2021.
+ *
+ * Descripcion:
+ * PaypalDonation es el componente View de fragment_paypal_donation,
+ * aqui se revisa la interacción del usuario con el botón de la
+ * interfaz y se realiza el pago en Paypal.
+ *
  */
 
 class PaypalDonation: Fragment() {
-    // This is the reference to the view.
-    private lateinit var binding: FragmentPaypalDonationBinding
+
     private val args: PaypalDonationArgs by navArgs()
+    private lateinit var binding: FragmentPaypalDonationBinding
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // The binding contains the view that this onCreateView function returns.
         binding = FragmentPaypalDonationBinding.inflate(layoutInflater)
+        pagoPaypal()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Se revisan los eventos...
+        showAmount()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun pagoPaypal() {
         val payPalButton = binding.actualPayPalButton
         payPalButton.setup(
             createOrder = CreateOrder { createOrderActions ->
                 val order = Order(
                     intent = OrderIntent.CAPTURE,
                     appContext = AppContext(
-                        brandName = "Fundación Dibujando un Meñana",
+                        brandName = "Fundación Dibujando un Mañana",
                         locale = "es-MX",
                         landingPage = "NO_PREFERENCE",
                         userAction = UserAction.PAY_NOW
@@ -71,9 +90,6 @@ class PaypalDonation: Fragment() {
                     val actionToConfirm = PaypalDonationDirections
                         .actionPaypalDonationToPayPalConfirmation()
                     findNavController().navigate(actionToConfirm)
-                    //Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
-                    //println("CaptureOrderResult: $captureOrderResult")
-
                 }
             },
             onCancel = OnCancel {
@@ -85,12 +101,6 @@ class PaypalDonation: Fragment() {
                 println("Error: $errorInfo")
             }
         )
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        showAmount()
     }
 
     @SuppressLint("SetTextI18n")

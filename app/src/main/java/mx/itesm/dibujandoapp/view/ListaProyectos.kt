@@ -1,5 +1,21 @@
 package mx.itesm.dibujandoapp.view
 
+/**
+ *
+ * Autor:
+ * Joan Daniel Guerrero García
+ *
+ * Última modificación:
+ * 5 de octubre de 2021
+ *
+ * Descripción:
+ * ListaProyectos es una clase la cual contiene los proyectos ya propuestos por
+ * la página de Fundación Dibujando un Mañana como causas para apoyar, aqui se
+ * escriben manualmente los proyectos y regresa un arreglo con todos los proyectos
+ * que se crearon a partir de la lista.
+ *
+ * */
+
 class ListaProyectos
 {
     fun leerProyectos(): List<Proyecto> {

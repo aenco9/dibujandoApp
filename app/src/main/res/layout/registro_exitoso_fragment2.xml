@@ -18,7 +18,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Te has registrado!"
+            android:text="@string/registroExitoso_text"
             android:textColor="@color/rojo"
             android:textSize="24sp" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ahora puedes iniciar sesión"
+            android:text="@string/registroExitoso_text2"
             android:textColor="@color/rojo"
             android:textSize="24sp" />
 
@@ -41,7 +41,7 @@
             android:backgroundTint="@color/rojo"
             android:backgroundTintMode="add"
             android:fontFamily="@font/palatino"
-            android:text="Entendido"
+            android:text="@string/boton_entendido"
             android:textColor="@color/white" />
     </LinearLayout>
 

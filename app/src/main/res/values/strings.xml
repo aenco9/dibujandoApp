@@ -2,12 +2,13 @@
     <!--
     Autores:
         Luis Ignacio Ferro Salinas
+        Joan Daniel Guerrero García
     Última modificación:
-        15 de octubre de 2021.
+        22 de octubre de 2021.
     -->
 
     <string name="app_name">dibujandoApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Placeholders -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_principal">PrincipalActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -16,6 +17,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="content_textview">TextView</string>
+    <string name="content_Imagen1">Imagen descriptiva 1</string>
     <!-- Para side navigation -->
     <string name="title">Fundación Dibujando un Mañana</string>
     <string name="subtitle">https://dibujando.org.mx</string>
@@ -24,6 +27,8 @@
     <string name="donaciones">Dona Aquí</string>
     <string name="perfil">Perfil</string>
     <string name="causas">Causas y Proyectos</string>
+    <string name="content_logo">Logo Fundacion Dibujando un Mañana</string>
+    <string name="content_logoSecundario">Logo corazon</string>
     <!-- Strings para la sección de donaciones -->
     <string name="subtitle_donations1">No hay barreras imposibles</string>
     <string name="subtitle_donatios1continued">CUANDO EXISTE LA VOLUNTAD DE AYUDAR Y ALGUIEN QUE SABE HACERLO.</string>
@@ -46,7 +51,7 @@
     <string name="bank_donations5">Banco: BBVA</string>
     <string name="account_donations5">N° de Cuenta: 0450074497</string>
     <string name="clabe_donations5">CLABE: 012180004500744974</string>
-    <string name="end_donations5">Para más información o dudas sobre tus donativos Llama al Tel. (55) 2122-5286  Ext. 3320 o escríbenos a entreamigos@dibujando.org.mx</string>
+    <string name="end_donations5">Para más información o dudas sobre tus donativos Llama al Tel. (55) 2122–5286  Ext. 3320 o escríbenos a entreamigos@dibujando.org.mx</string>
     <!-- Strings para pantalla de datos de donacion -->
     <string name="hint_nombre">Nombre Completo</string>
     <string name="hint_genero">Género (M/F)</string>
@@ -64,14 +69,32 @@
     <string name="label_confirmation_paypal">Comprobante</string>
     <string name="confirmation_paypal">Felicidades, se ha realizado la donación. ¡Muchas gracias!</string>
     <string name="confirm_paypal_button">Entendido</string>
-    <string name="content_logo">Logo Fundacion Dibujando un Mañana</string>
-    <string name="content_textview">TextView</string>
+    <!-- Strings de recurso de layout de donaciones -->
     <string name="content_JuntosOtraVez">Boton donacion Campaña Juntos Otra Vez</string>
     <string name="content_EntreAmigos">Boton donar Campaña Entre Amigos</string>
+    <!-- Strings de recurso de layout de perfil, inicio de sesión y crear cuenta -->
     <string name="content_LogOut">Cerrar sesión</string>
     <string name="content_NuevaCuenta">Crear nueva cuenta</string>
-    <string name="content_textoRenglon">¡Selecciona para apoyar la causa!</string>
     <string name="content_usuario">Usuario</string>
     <string name="content_correo">Correo</string>
+    <string name="content_LogIn">Iniciar sesion</string>
+    <string name="content_newAccount">Crear nueva cuenta</string>
+    <string name="registroExitoso_text">¡Te has registrado!</string>
+    <string name="registroExitoso_text2">Ahora puedes iniciar sesión</string>
+    <string name="boton_entendido">Entendido</string>
+    <!-- Strings de recurso de layout de causas -->
+    <string name="content_textoRenglon">¡Selecciona para apoyar la causa!</string>
+    <string name="Titulo_causas">Nuestras causas</string>
+    <string name="subtitulo_Causas">Ayuda ahora</string>
+    <!-- Strings de recurso de layout de informacion -->
+    <string name="content_quienesSomos">Nos dedicamos a impulsar el desarrollo social de niños y adolescentes en situación del vulnerabilidad en México y América Central con un modelo de inversión social que entrelaza la voluntad de ayudar de diversos actores y la transforma en programas sociales basados en los derechos humanos que generan impactos positivos a largo plazo.</string>
+    <string name="titulo_nuestraHistoria">Nuestra Historia</string>
+    <string name="content_informacion">En octubre de 1997 nació Fundación Dibujando un Mañana, A.C. con el objetivo de invertir en instituciones que atienden a niños y adolescentes.\n\nHemos vivido muchos acontecimientos en 20 años, con siete presidentes, 40 miembros del Consejo Directivo, diferentes asesores en ocho Comités de trabajo y el Equipo Operativo. \n\nEstamos convencidos de que la ruta es generar alianzas para crear condiciones idóneas que favorezcan la vida digna de todas las personas en nuestro país y la región.</string>
+    <string name="content_principios">Principios</string>
+    <string name="content_propositos">Propositos</string>
+    <string name="content_virtudes">Virtudes</string>
+    <string name="titulo_Informacion">¡Somos Fundación Dibujando un Mañana!</string>
+    <string name="content_informacion2">No hay barreras imposibles cuando existe la voluntad de ayudar y alguien que sabe hacerlo</string>
+    <string name="content_informacion3">Nuestra plataforma estratégica</string>
 
 </resources>

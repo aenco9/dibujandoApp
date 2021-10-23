@@ -3,8 +3,15 @@ package mx.itesm.dibujandoapp.donaciones
 /**
  * Autor:
  * Luis Ignacio Ferro Salinas
+ *
  * Última modificación:
  * 14 de octubre de 2021
+ *
+ * Descripción
+ * ModeloDonaciones es el componente Model de fragment_datos_donaciones,
+ * aqui se revisan las cadenas de todos los campos para verificarlos
+ * individualmente de acuerdo a su formato.
+ *
  */
 
 class ModeloDonaciones {

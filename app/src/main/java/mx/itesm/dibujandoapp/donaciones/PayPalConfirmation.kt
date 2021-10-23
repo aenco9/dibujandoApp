@@ -9,16 +9,23 @@ import androidx.navigation.fragment.findNavController
 import mx.itesm.dibujandoapp.databinding.FragmentPayPalConfirmationBinding
 
 /**
+ *
  * Autor:
  * Luis Ignacio Ferro Salinas
+ *
  * Última modificación:
  * 18 de octubre de 2021
+ *
+ * Descripción:
+ * PayPalConfirmation es el componente fragment_pay_pal_confirmation,
+ * aqui se revisa la interacción del usuario con el botón de la
+ * interfaz.
+ *
  */
 
 class PayPalConfirmation : Fragment() {
 
     private lateinit var binding: FragmentPayPalConfirmationBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +37,8 @@ class PayPalConfirmation : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Se revisan los eventos...
         respondToConfirmButtonTap()
     }
 

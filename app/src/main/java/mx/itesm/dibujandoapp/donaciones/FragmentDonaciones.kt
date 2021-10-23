@@ -13,23 +13,25 @@ import mx.itesm.dibujandoapp.databinding.FragmentDonacionesBinding
  *
  * Autor:
  * Luis Ignacio Ferro Salinas
+ *
  * Última modificación:
  * 14 de octubre de 2021
+ *
+ * Descripción:
+ * FragmentDonaciones es el componente View de fragment_donaciones,
+ * aqui se revisa si el usuario selecciona algun botón para donaciones
+ * y se revisa si el monto ingresado es válido
  *
  * */
 
 class FragmentDonaciones : Fragment() {
 
-
-    // This is the reference to the view.
     private lateinit var binding: FragmentDonacionesBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // The binding contains the view that this onCreateView function returns.
         binding = FragmentDonacionesBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -37,11 +39,14 @@ class FragmentDonaciones : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.contentFinal.visibility = View.GONE
+
+        // Se revisan los eventos...
         respondToTaps()
     }
 
     private fun respondToTaps() {
 
+        // Se revisan interacciones con botones y campos de monto
         binding.campaignImageViewBtn1.setOnClickListener {
             val actionForCampaign1 = FragmentDonacionesDirections
                 .actionFragmentDonacionesToDatosCausa("Juntos Otra Vez",
@@ -52,12 +57,12 @@ class FragmentDonaciones : Fragment() {
         }
 
         binding.campaignImageViewBtn2.setOnClickListener {
-            val actionForCampaign1 = FragmentDonacionesDirections
+            val actionForCampaign2 = FragmentDonacionesDirections
                 .actionFragmentDonacionesToDatosCausa("Entre amigos",
                     "¡Estamos buscando a 500 Entre Amigos! ¡Súmate y forma " +
                             "parte de una comunidad de personas que está contribuyendo a " +
                             "mejorar la vida de miles de niñas y niños!")
-            findNavController().navigate(actionForCampaign1)
+            findNavController().navigate(actionForCampaign2)
         }
 
         binding.payPalDonateOnceBtn.setOnClickListener {
@@ -78,7 +83,8 @@ class FragmentDonaciones : Fragment() {
                 }
                 else -> {
                     val actionWithAmount = FragmentDonacionesDirections
-                        .actionFragmentDonacionesToDatosDonaciones(binding.montoPaypalEditTextDecimal
+                        .actionFragmentDonacionesToDatosDonaciones(binding
+                            .montoPaypalEditTextDecimal
                             .text
                             .toString()
                             .toFloat())

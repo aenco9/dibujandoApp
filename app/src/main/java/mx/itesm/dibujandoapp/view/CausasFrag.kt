@@ -11,11 +11,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import mx.itesm.dibujandoapp.databinding.FragmentCausasFragmentBinding
 import mx.itesm.dibujandoapp.viewmodel.CausasVM
 
+/**
+ *
+ * Autor:
+ * Joan Daniel Guerrero García
+ *
+ * Última modificación:
+ * 15 de octubre de 2021
+ *
+ * Descripción:
+ * CausasFrag es el componente View de fragment_causas_fragment,
+ * aqui se recibe la lista de proyectos dados por AdaptadorListaProyectos
+ * para actualizar la interfaz, además de revisar cuando el usuario
+ * seleccione algun proyecto para llevarlo a la pantalla de datos_causa_fragment.
+ *
+ * */
+
 class CausasFrag : Fragment(), RenglonListener {
 
     private val viewModel: CausasVM by viewModels()
-    private lateinit var binding: FragmentCausasFragmentBinding
     private val adaptador = AdaptadorListaProyectos(arrayListOf())
+    private lateinit var binding: FragmentCausasFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +45,7 @@ class CausasFrag : Fragment(), RenglonListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observadores, eventos, adaptador
+        // Se revisan los eventos...
         configurarAdaptador()
         configurarObservadores()
         configurarEventos()
@@ -55,6 +71,7 @@ class CausasFrag : Fragment(), RenglonListener {
     }
 
     override fun clickEnRenglon(posicion: Int) {
+        //Se ha seleccionado un proyecto y se redirige a donar a este proyecto
         val proyecto = adaptador.arrCausas[posicion]
         println("Seleccion en proyecto $proyecto")
         val titulo = proyecto.Titulo

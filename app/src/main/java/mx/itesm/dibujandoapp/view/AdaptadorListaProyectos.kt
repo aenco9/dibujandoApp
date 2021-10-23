@@ -11,6 +11,21 @@ import mx.itesm.dibujandoapp.R
 import java.sql.DriverManager.println
 import java.util.*
 
+/**
+ *
+ * Autor:
+ * Joan Daniel Guerrero García
+ *
+ * Última modificación:
+ * 7 de octubre de 2021
+ *
+ * Descripción:
+ * AdaptadorListaProyectos es un complemento al componente View de fragment_causas_fragment,
+ * este script ayuda a crear, guardar y regresar la lista de proyectos que se guarden en
+ * ListaProyectos, para despues mandarlos a CausasFrag por medio de un RecyclerView.
+ *
+ * */
+
 class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
     RecyclerView.Adapter<AdaptadorListaProyectos.ProyectoViewHolder>()
 {
@@ -20,7 +35,8 @@ class AdaptadorListaProyectos (var arrCausas: ArrayList<Proyecto>):
         parent: ViewGroup,
         viewType: Int
     ): ProyectoViewHolder {
-        val vistaRenglon = LayoutInflater.from(parent.context).inflate(R.layout.renglon_causa, parent, false)
+        val vistaRenglon = LayoutInflater.from(parent.context).inflate(
+            R.layout.renglon_causa, parent, false)
         return ProyectoViewHolder(vistaRenglon)
     }
 

@@ -10,10 +10,25 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import mx.itesm.dibujandoapp.databinding.DatosCausaFragmentBinding
 
+/**
+ *
+ * Autor:
+ * Joan Daniel Guerrero García
+ *
+ * Última modificación:
+ * 15 de octubre de 2021
+ *
+ * Descripción:
+ * DatosCausa es el componente View de datos_causa_fragment,
+ * aqui se verifica el monto que ingrese el usuario y lo
+ * lleva a fragment_datos_donaciones
+ *
+ * */
+
 class DatosCausa : Fragment() {
 
-    private lateinit var binding: DatosCausaFragmentBinding
     private val args: DatosCausaArgs by navArgs()
+    private lateinit var binding: DatosCausaFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +43,12 @@ class DatosCausa : Fragment() {
         binding.tvTituloSeleccionado.text = args.titulo
         binding.tvDescripcionSeleccionado.text = args.descripcion
 
+        // Se revisan los eventos...
         respondToTaps()
     }
 
     private fun respondToTaps() {
+        // Se revisa el estado del monto ingresado y se configura el botón
         binding.donarDatosDonacionesBtn2.setOnClickListener {
             when {
                 binding.montoPaypalEditTextDecimal2.text.isEmpty() -> {
@@ -55,7 +72,6 @@ class DatosCausa : Fragment() {
                     )
 
                     findNavController().navigate(accion)
-
                 }
             }
         }

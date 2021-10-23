@@ -41,7 +41,7 @@
                 android:backgroundTint="@color/rojo"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/questrial"
-                android:text="Iniciar sesion"
+                android:text="@string/content_LogIn"
                 android:textColor="@color/white" />
 
             <Button
@@ -55,7 +55,7 @@
                 android:backgroundTint="#FF9800"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/questrial"
-                android:text="Crear nueva cuenta"
+                android:text="@string/content_newAccount"
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 

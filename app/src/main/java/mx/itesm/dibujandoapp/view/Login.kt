@@ -2,7 +2,6 @@ package mx.itesm.dibujandoapp.view
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,20 +20,32 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import mx.itesm.dibujandoapp.databinding.LoginFragmentBinding
-import mx.itesm.dibujandoapp.viewmodel.LoginVM
 
+/**
+ *
+ * Autores:
+ * Alejandro Enriquez Coronado
+ * Eric Alexis Castañeda Bravo
+ * Joan Daniel Guerrero García
+ * Luis Ignacio Ferro Salinas
+ *
+ * Última modificación:
+ * 22 de octubre de 2021
+ *
+ * Descripción:
+ * DatosDonaciones es el componente View de fragment_datos_donaciones,
+ * aqui se verifican los datos que se ingresen del usuario y actualiza
+ * los campos si el usuario ya esta registrado.
+ *
+ * */
 
 class Login : Fragment() {
 
-    private var destiny: Int = -1
     var registrado: Boolean = false
-
+    private var destiny: Int = -1
     private val CODIGO_SIGNIN: Int = 500
-
-    private lateinit var viewModel: LoginVM
-
-    private lateinit var binding: LoginFragmentBinding
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var binding: LoginFragmentBinding
     private lateinit var baseDatos: FirebaseDatabase
 
 
@@ -48,27 +59,29 @@ class Login : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Eventos
         baseDatos = Firebase.database
         revisarFirebase()
 
         if (FirebaseAuth.getInstance().currentUser != null) {
             println("Si hay usuario")
             // Lanzar actividad perfil
-            irALogin()
+            irAPerfil()
         } else {
             println("Hacer Login...")
         }
 
+        // Se revisan los eventos...
         configurarEvento()
     }
 
     private fun configurarEvento() {
         binding.btnLogIn.setOnClickListener {
+            // Destiny = 0 -> Apretó el botón de Log In
             destiny = 0
             autenticar()
         }
         binding.btnRegistar.setOnClickListener {
+            // Destiny = 1 -> Apretó el botón de Registro
             destiny = 1
             autenticar()
         }
@@ -76,11 +89,12 @@ class Login : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        // Se revisa cuando se reciba algun código
+        // proporcionado por Google por el método autenticar
         if (requestCode == CODIGO_SIGNIN) {
             when (resultCode) {
                 RESULT_OK -> {
-                    //revisarFirebase()
-
                     if (destiny == 0) {
                         println("HACER LOGIN")
                         val usuarioGoogle = FirebaseAuth.getInstance().currentUser
@@ -88,7 +102,7 @@ class Login : Fragment() {
                         println("Correo: ${usuarioGoogle?.email}")
                         println("Token: ${usuarioGoogle?.uid}")
 
-                        irALogin()
+                        irAPerfil()
 
                     } else if (destiny == 1) {
                         println("HACER REGISTRO")
@@ -115,6 +129,7 @@ class Login : Fragment() {
     }
 
     private fun autenticar() {
+        // Se ejecuta el complemento de Google para hacer Log In
         val providers =
             arrayListOf(AuthUI.IdpConfig.GoogleBuilder().build())
 
@@ -128,13 +143,16 @@ class Login : Fragment() {
     }
 
     private fun revisarFirebase() {
+        // Aquí se ejecuta el método onDataChange para revisar si el usuario
+        // ya esta en nuestra base de datos de FireBase
+
         val usuario = mAuth.currentUser
         val myReference = baseDatos.getReference("Usuarios/")
         myReference.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (usuario != null) {
                     if (snapshot.hasChild(usuario.uid)) {
-                        println("Moviendose a Perfil desde Login...")
+                        // El usuario si está en la base de datos y ya está registrado
                         registrado = true
                     }
                 }
@@ -145,10 +163,10 @@ class Login : Fragment() {
         })
     }
 
-    private fun irALogin(){
-        println("Ir a login...")
+    private fun irAPerfil(){
         println(registrado)
         if(registrado){
+            // Si ya esta registrado, ir al Perfil
             destiny = -1
             findNavController().navigate(LoginDirections.actionLoginToPerfilFragment())
         }
@@ -158,10 +176,5 @@ class Login : Fragment() {
                         " esta cuenta de google, por favor regístrese.",
                 Toast.LENGTH_SHORT).show()
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginVM::class.java)
     }
 }

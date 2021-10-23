@@ -23,25 +23,31 @@ import mx.itesm.dibujandoapp.viewmodel.Usuario
 
 /**
  *
- * Autor:
+ * Autores:
  * Luis Ignacio Ferro Salinas
+ * Joan Daniel Guerrero García
+ *
  * Última modificación:
- * 14 de octubre de 2021
+ * 22 de octubre de 2021
+ *
+ * Descripción:
+ * DatosDonaciones es el componente View de fragment_datos_donaciones,
+ * aqui se verifican los datos que se ingresen del usuario y actualiza
+ * los campos si el usuario ya esta registrado.
  *
  * */
 
 class DatosDonaciones : Fragment() {
 
-    private lateinit var binding: FragmentDatosDonacionesBinding
     private val args: DatosDonacionesArgs by navArgs()
     private val viewModel: DatosDonacionesVM by viewModels()
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private lateinit var baseDatos: FirebaseDatabase
     private val usuario = mAuth.currentUser
+    private lateinit var binding: FragmentDatosDonacionesBinding
+    private lateinit var baseDatos: FirebaseDatabase
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDatosDonacionesBinding.inflate(layoutInflater)
@@ -50,10 +56,11 @@ class DatosDonaciones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Se actualizan los campos si el usuario ya esta registrado
         baseDatos = Firebase.database
         if(usuario != null)
         {
-            // Si el usuario hizo login, esto implica que sus datos están en Firebase.
             val myReference = baseDatos.getReference("Usuarios/")
             myReference.addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -70,6 +77,8 @@ class DatosDonaciones : Fragment() {
                 }
             })
         }
+
+        // Se revisan los eventos...
         respondToTaps()
         subscribeToGenderChange()
         subscribeToEmailChange()
@@ -79,9 +88,8 @@ class DatosDonaciones : Fragment() {
 
     private fun subscribeToPhoneNumberChange() {
         binding.telefonoEditTextPhone.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the phone number.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptablePhoneNumber(binding
                         .telefonoEditTextPhone
                         .text
@@ -98,6 +106,7 @@ class DatosDonaciones : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun subscribeToDateChange() {
+        // Se añaden las diagonales automáticamente al escribir la fecha
         binding.fechaEditText.addTextChangedListener {
             if(binding.fechaEditText.text.toString().length == 2 ||
                 binding.fechaEditText.text.toString().length == 5){
@@ -107,9 +116,8 @@ class DatosDonaciones : Fragment() {
         }
 
         binding.fechaEditText.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the date.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableDate(binding.fechaEditText.text.toString())) {
                     binding.fechaEditText.setText("")
                     Toast.makeText(
@@ -122,9 +130,8 @@ class DatosDonaciones : Fragment() {
 
     private fun subscribeToEmailChange() {
         binding.correoEditTextEmail.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the email.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableEmail(binding.correoEditTextEmail.text.toString())) {
                     binding.correoEditTextEmail.setText("")
                     Toast.makeText(
@@ -137,9 +144,8 @@ class DatosDonaciones : Fragment() {
 
     private fun subscribeToGenderChange() {
         binding.generoEditText.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                // User is modifying the gender.
-            } else {
+            if (!hasFocus) {
+                // Se dejó de seleccionar el campo
                 if (!viewModel.acceptableGender(binding.generoEditText.text.toString())) {
                     binding.generoEditText.setText("")
                     Toast.makeText(
@@ -153,10 +159,7 @@ class DatosDonaciones : Fragment() {
 
 
     private fun respondToTaps() {
-
-        // I need to check the state of the swittch to know whether or not I have to
-                // annonunce the message.
-
+        // Se verifica que todos los campos han sido llenados para ir a PaypalDonation
         binding.donarDatosDonacionesBtn.setOnClickListener {
                     if (binding.nombreEditText.text.isEmpty() or
                         binding.fechaEditText.text.isEmpty() or

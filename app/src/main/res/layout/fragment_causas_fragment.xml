@@ -27,6 +27,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/content_logoSecundario"
                 android:src="@drawable/corazon"
                 tools:ignore="ImageContrastCheck" />
 
@@ -35,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/playfair_display_bold"
-                android:text="Nuestras causas"
+                android:text="@string/Titulo_causas"
                 android:textAlignment="center"
                 android:textColor="@color/grey_main"
                 android:textSize="39sp"
@@ -48,7 +49,7 @@
                 android:fontFamily="@font/playfair_display"
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
-                android:text="Ayuda ahora"
+                android:text="@string/subtitulo_Causas"
                 android:textAlignment="center"
                 android:textColor="@color/grey_main"
                 android:textSize="18sp" />
