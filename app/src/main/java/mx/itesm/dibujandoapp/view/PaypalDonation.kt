@@ -77,7 +77,8 @@ class PaypalDonation: Fragment() {
                         PurchaseUnit(
                             amount = Amount(
                                 currencyCode = CurrencyCode.MXN,
-                                value = String.format("%.1f", args.monto) // Pasando el monto a paypal.
+                                value = String.format("%.1f", args.monto)
+                                // Pasando el monto a paypal.
                             )
                         )
                     )

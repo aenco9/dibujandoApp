@@ -16,7 +16,8 @@ class AppDibujandoUnManana: Application() {
         super.onCreate()
         val config = CheckoutConfig(
             application = this,
-            clientId = "AR79_J32ZNrbgUXI6bmwcYnziWu7hM6OByiOLJN_WwfCqxuw7vLWoHLewBFl2_9vgpVL_RB0Hq3OcECq",
+            clientId = "AR79_J32ZNrbgUXI6bmwcYnziWu7hM6OBy" +
+                    "iOLJN_WwfCqxuw7vLWoHLewBFl2_9vgpVL_RB0Hq3OcECq",
             environment = Environment.SANDBOX,// importar la mas corta de environment.
             returnUrl = "mx.itesm.dibujandoapp://paypalpay",
             currencyCode = CurrencyCode.MXN,

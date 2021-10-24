@@ -44,7 +44,8 @@ class PayPalConfirmation : Fragment() {
 
     private fun respondToConfirmButtonTap() {
         binding.confirmPayPalButton.setOnClickListener {
-            val myAction = PayPalConfirmationDirections.actionPayPalConfirmationToFragmentDonaciones()
+            val myAction = PayPalConfirmationDirections
+                .actionPayPalConfirmationToFragmentDonaciones()
             findNavController().navigate(myAction)
         }
     }
